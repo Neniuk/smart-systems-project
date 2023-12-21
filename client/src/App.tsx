@@ -5,10 +5,15 @@ import WeatherCard from "./components/WeatherCard";
 import ExploreCard from "./components/ExploreCard";
 import HamburgerButton from "./components/HamburgerButton";
 
+import getWeather from "./api/weather";
+
 import Location from "./models/Location";
 
 function App() {
-    const [location, setLocation] = useState<Location | null>(null);
+    const [location, setLocation] = useState<Location | undefined>(undefined);
+    const [weatherData, setWeatherData] = useState<object | undefined>(
+        undefined
+    );
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -20,6 +25,13 @@ function App() {
                     };
                     localStorage.setItem("location", JSON.stringify(location));
                     setLocation(location);
+
+                    console.log("Location retrieved successfully");
+
+                    getWeather(location).then((weatherData) => {
+                        // console.log(weatherData);
+                        setWeatherData(weatherData);
+                    });
                 },
                 (error) => {
                     console.error("Error retrieving geolocation data", error);
@@ -38,7 +50,7 @@ function App() {
         <div className="App">
             <div className="flex flex-col items-center justify-center pt-16">
                 <HamburgerButton />
-                <WeatherCard location={location || {}} />
+                <WeatherCard location={location} weatherData={weatherData} />
                 <ExploreCard />
             </div>
         </div>
