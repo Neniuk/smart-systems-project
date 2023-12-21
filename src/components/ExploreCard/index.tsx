@@ -7,7 +7,7 @@ class ExploreCard extends Component<ExploreCardProps> {
         return (
             <div className="mx-auto mt-4 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white sm:max-w-96">
                 <div>
-                    <img src=""></img>
+                    <img src="" alt="Location Marker Icon"></img>
                 </div>
                 <div className="text-right">
                     <h1 className="text-3xl">Explore</h1>
