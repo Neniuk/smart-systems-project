@@ -1,13 +1,20 @@
 type Weather = {
-    location: string;
+    locationName: string;
+    country: string;
+    feelsLike: number;
+    groundLevel: number;
+    humidity: number;
+    pressure: number;
+    seaLevel: number;
     currentTemperature: number;
     minimumTemperature: number;
     maximumTemperature: number;
-    humidity: number;
-    windSpeed: number;
-    weather: string;
+    weatherMain: string;
     weatherDescription: string;
     weatherIcon: string;
+    windSpeed: number;
+    windDegree: number;
+    windGust: number;
 };
 
 export default Weather;
