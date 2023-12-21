@@ -12,7 +12,7 @@ class WeatherCard extends Component<WeatherCardProps> {
     render() {
         const { location } = this.props;
         return (
-            <div className="min-w-95% mt-4 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white sm:min-w-96 sm:max-w-96">
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 mt-8 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white">
                 <div className="text-left">
                     <h1 className="text-3xl">Lahti</h1>
                     <h2 className="text-sky-100">Partly Cloudy</h2>

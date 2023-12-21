@@ -3,6 +3,7 @@ import "./App.css";
 
 import WeatherCard from "./components/WeatherCard";
 import ExploreCard from "./components/ExploreCard";
+import HamburgerButton from "./components/HamburgerButton";
 
 import Location from "./models/Location";
 
@@ -23,7 +24,8 @@ function App() {
 
     return (
         <div className="App">
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center pt-16">
+                <HamburgerButton />
                 <WeatherCard location={location} />
                 <ExploreCard />
             </div>

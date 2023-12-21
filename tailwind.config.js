@@ -9,6 +9,9 @@ module.exports = {
             minWidth: {
                 "95%": "95%",
             },
+            spacing: {
+                128: "32rem",
+            },
         },
     },
     plugins: [],
