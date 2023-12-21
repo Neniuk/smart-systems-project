@@ -1,18 +1,18 @@
 .weather-card {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	max-width: 95%;
-	margin: auto;
-	margin-top: 1rem;
-	padding: 1rem;
-	border-radius: var(--border-radius);
-	background-color: var(--secondary-color);
-	color: var(--text-color-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
 }
 
 @media (min-width: 600px) {
-	.weather-card {
-		max-width: 600px;
-	}
+    .weather-card {
+        max-width: 600px;
+    }
 }
