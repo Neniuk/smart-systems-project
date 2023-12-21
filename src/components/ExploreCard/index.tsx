@@ -5,7 +5,7 @@ type ExploreCardProps = {};
 class ExploreCard extends Component<ExploreCardProps> {
     render() {
         return (
-            <div className="mx-auto mt-4 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white sm:max-w-96">
+            <div className="min-w-95% mt-4 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white sm:min-w-96 sm:max-w-96">
                 <div>
                     <img src="" alt="Location Marker Icon"></img>
                 </div>

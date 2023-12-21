@@ -23,8 +23,10 @@ function App() {
 
     return (
         <div className="App">
-            <WeatherCard location={location} />
-            <ExploreCard />
+            <div className="flex flex-col items-center justify-center">
+                <WeatherCard location={location} />
+                <ExploreCard />
+            </div>
         </div>
     );
 }
