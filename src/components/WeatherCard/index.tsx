@@ -11,6 +11,11 @@ type WeatherCardProps = {
 class WeatherCard extends Component<WeatherCardProps> {
     render() {
         const { location } = this.props;
+        // If location object is not empty "{}"
+        if (location) {
+            console.log("WeatherCard: Location Received");
+            console.log(JSON.stringify(location));
+        }
         return (
             <div className="min-w-95% sm:min-w-128 sm:max-w-128 mt-8 flex max-w-95% flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white">
                 <div className="text-left">
