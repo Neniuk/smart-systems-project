@@ -1,17 +1,8 @@
 import React, { Component } from "react";
 import "./styles.css";
 
-type WeatherProp = {
-	location: string;
-	currentTemperature: number;
-	minimumTemperature: number;
-	maximumTemperature: number;
-	humidity: number;
-	windSpeed: number;
-	weather: string;
-	weatherDescription: string;
-	weatherIcon: string;
-};
+// import Location from "../../models/Location";
+// import Weather from "../../models/Weather";
 
 type WeatherCardProps = {
 	location: object;

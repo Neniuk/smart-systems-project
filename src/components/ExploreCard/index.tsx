@@ -1,0 +1,21 @@
+import React, { Component } from "react";
+
+type ExploreCardProps = {};
+
+class ExploreCard extends Component<ExploreCardProps> {
+	render() {
+		return (
+			<div className="flex flex-row justify-between max-w-95% mx-auto mt-4 sm:max-w-96 bg-sky-300 rounded-2xl p-4 text-white">
+				<div>
+					<img src=""></img>
+				</div>
+				<div className="text-right">
+					<h1 className="text-3xl">Explore</h1>
+					<h2 className="text-sky-100">Find activities near you</h2>
+				</div>
+			</div>
+		);
+	}
+}
+
+export default ExploreCard;

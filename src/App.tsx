@@ -3,23 +3,29 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import WeatherCard from "./components/WeatherCard";
+import ExploreCard from "./components/ExploreCard";
+
+import Location from "./models/Location";
 
 function App() {
 	useEffect(() => {
 		navigator.geolocation.getCurrentPosition((position) => {
-			const { latitude, longitude } = position.coords;
-			localStorage.setItem(
-				"location",
-				JSON.stringify({ latitude, longitude })
-			);
+			const location: Location = {
+				longitude: position.coords.longitude,
+				latitude: position.coords.latitude,
+			};
+			localStorage.setItem("location", JSON.stringify(location));
 		});
 	}, []);
 
-	const location = JSON.parse(localStorage.getItem("location") || "{}");
+	const location: Location = JSON.parse(
+		localStorage.getItem("location") || "{}"
+	);
 
 	return (
 		<div className="App">
 			<WeatherCard location={location} />
+			<ExploreCard />
 		</div>
 	);
 }
