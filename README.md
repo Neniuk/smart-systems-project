@@ -67,7 +67,7 @@ format Tailwind classes, this is installed
 automatically when you run `npm install` in each
 folder.
 
----
+===
 
 ### Tailwind CSS
 
