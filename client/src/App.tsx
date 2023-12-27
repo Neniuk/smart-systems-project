@@ -2,9 +2,7 @@
 // - https://reactrouter.com/en/main/start/overview
 // - https://youtu.be/Ul3y1LXxzdU?si=thVgQljPJao9XeYo
 
-import React, { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import "./App.css";
 
 import HomePage from "./pages/HomePage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
