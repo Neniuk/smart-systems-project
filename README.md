@@ -76,3 +76,10 @@ for styling.
 Refer to the [Tailwind Cheatsheet](https://tailwindcomponents.com/cheatsheet/) 
 and the [Tailwind documentation](https://tailwindcss.com/docs/) 
 for more information on how to use Tailwind.
+
+In short, Tailwind styles work by adding classes to
+HTML elements. The different classnames provide styling
+to the element. For example, the following HTML element
+will have a red background color:
+
+    <div class="bg-red-500">This is a red div</div>
