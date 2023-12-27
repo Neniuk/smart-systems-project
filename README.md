@@ -66,3 +66,13 @@ In addition it uses the Prettier Tailwind plugin to
 format Tailwind classes, this is installed
 automatically when you run `npm install` in each
 folder.
+
+
+### Tailwind CSS
+
+This project uses mainly [Tailwind CSS](https://tailwindcss.com/) 
+for styling. 
+
+Refer to the [Tailwind Cheatsheet](https://tailwindcomponents.com/cheatsheet/) 
+and the [Tailwind documentation](https://tailwindcss.com/docs/) 
+for more information on how to use Tailwind.
