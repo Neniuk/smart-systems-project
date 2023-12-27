@@ -51,3 +51,6 @@ portfolio and codebase.
 > very flowery, and this will not be good nor 
 > believable. I will deduct points! "
 
+** ADD DISCLOSURE STATEMENT BELOW HERE - DELETE EVERYTHING ABOVE THIS LINE WHEN DONE **
+
+# Generative AI Disclosure Statement
