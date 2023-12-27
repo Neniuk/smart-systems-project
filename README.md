@@ -15,7 +15,7 @@ Download the dependencies separately in the client
     npm install
 
 ⚠️ Make sure you're in the correct folder when you run
-the command.
+the command. ⚠️
 
 
 ### Running the App
