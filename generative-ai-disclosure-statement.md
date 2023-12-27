@@ -35,8 +35,7 @@ portfolio and codebase.
 > 
 > These statements are binding and it's your 
 > responsibility to ensure truthful disclosure. "
-
-
+  
 > " One more thing:
 > Dear students, please understand that its totally fine 
 > to use generative AI to improve your text. But, I will 
