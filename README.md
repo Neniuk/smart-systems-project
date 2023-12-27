@@ -2,7 +2,7 @@
 Weather Planner
 
 ## Description
-
+Weather Planner is a personalized planner that adjusts recommendations based on the weather. It is designed to alleviate indecision by suggesting activities and appropriate clothing choices. The planner automatically accesses the user's location or allows manual entry, and provides weather forecasts, activity suggestions like outdoor events, restaurants, hotels, and clothing recommendations to ensure users have a pleasant experience regardless of weather conditions.
 
 ## Development
 
