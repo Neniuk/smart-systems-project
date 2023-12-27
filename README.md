@@ -21,7 +21,7 @@ Make sure you're in the correct folder when you run the command.
 Before running the app, make sure you have all the dependencies installed, and that you have an `.env` file in the server folder with the following variables:
     
     ```
-    PORT=5000
+    PORT="5000"
     OPENWEATHER_API_KEY="your-api-key-here"
     ```
 
