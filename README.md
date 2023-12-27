@@ -51,6 +51,9 @@ in the terminal with:
 
     prettier . --write
 
+Refer to the [documentation](https://prettier.io/docs/en/cli.html) 
+for more detailed instructions. 
+
 **NOTE!** This command will overwrite all files in the
 current folder and subfolders. Make sure you're in the
 correct folder when you run the command. Files and
