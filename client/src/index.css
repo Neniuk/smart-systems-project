@@ -5,6 +5,9 @@
 :root {
     --primary-color: #bfdbf1;
     --secondary-color: #78a2f0;
+    --tertiary-color: #3c6e71;
+    --accent-color-1: #f0f3bd;
+
     --border-color: #dd7e26;
 
     --text-color-light: #ffffff;

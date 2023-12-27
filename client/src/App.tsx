@@ -42,9 +42,9 @@ function App() {
         }
     }, []);
 
-    if (location) {
-        console.log(JSON.stringify(location));
-    }
+    // if (location) {
+    //     console.log(JSON.stringify(location));
+    // }
 
     return (
         <div className="App">

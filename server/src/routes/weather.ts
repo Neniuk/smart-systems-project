@@ -11,7 +11,7 @@ router.post("/", (req: Request, res: Response, next: NextFunction) => {
     const OPENWEATHER_API_KEY: string = process.env.OPENWEATHER_API_KEY || "";
 
     if (!OPENWEATHER_API_KEY) {
-        throw new Error('OPENWEATHER_API_KEY is not defined');
+        throw new Error("OPENWEATHER_API_KEY is not defined");
     }
 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=${OPENWEATHER_API_KEY}`;

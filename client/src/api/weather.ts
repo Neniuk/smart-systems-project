@@ -4,6 +4,7 @@ const ADDRESS = "http://localhost:";
 const PORT = "5000";
 
 const getWeather = async (location: Location) => {
+    // console.log("getWeather() called");
     const req: string = ADDRESS + PORT + "/weather";
 
     const res: Response = await fetch(req, {
@@ -13,8 +14,10 @@ const getWeather = async (location: Location) => {
         },
         body: JSON.stringify({ location: location }),
     });
+    // console.log("Response: ", res);
 
     const data: object = await res.json();
+    // console.log("Data: ", data);
 
     return data;
 };

@@ -12,6 +12,17 @@ module.exports = {
             spacing: {
                 128: "32rem",
             },
+            colors: {
+                primary: "var(--primary-color)",
+                secondary: "var(--secondary-color)",
+                tertiary: "var(--tertiary-color)",
+                accent: {
+                    1: "var(--accent-color-1)",
+                },
+                borderColor: "var(--border-color)",
+                textLight: "var(--text-color-light)",
+                textDark: "var(--text-color-dark)",
+            },
         },
     },
     plugins: [],
