@@ -51,7 +51,7 @@ in the terminal with:
 
     prettier . --write
 
-Refer to the [documentation](https://prettier.io/docs/en/cli.html) 
+Refer to the [Prettier documentation](https://prettier.io/docs/en/cli.html) 
 for more detailed instructions on the use of the
 Prettier CLI.
 
