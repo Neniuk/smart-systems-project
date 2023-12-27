@@ -1,61 +1,20 @@
+// References:
+// - https://reactrouter.com/en/main/start/overview
+// - https://youtu.be/Ul3y1LXxzdU?si=thVgQljPJao9XeYo
+
 import React, { useEffect, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
-import HamburgerButton from "./components/HamburgerButton";
-import WeatherCard from "./components/WeatherCard";
-import ExploreCard from "./components/ExploreCard";
-import ForecastCard from "./components/ForecastCard";
-
-import getWeather from "./api/weather";
-
-import Location from "./models/Location";
+import HomePage from "./pages/HomePage";
+import PageNotFoundPage from "./pages/PageNotFoundPage";
 
 function App() {
-    const [location, setLocation] = useState<Location | undefined>(undefined);
-    const [weatherData, setWeatherData] = useState<object | undefined>(
-        undefined
-    );
-
-    useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const location: Location = {
-                        longitude: position.coords.longitude,
-                        latitude: position.coords.latitude,
-                    };
-                    localStorage.setItem("location", JSON.stringify(location));
-                    setLocation(location);
-
-                    console.log("Location retrieved successfully");
-
-                    getWeather(location).then((weatherData) => {
-                        // console.log(weatherData);
-                        setWeatherData(weatherData);
-                    });
-                },
-                (error) => {
-                    console.error("Error retrieving geolocation data", error);
-                }
-            );
-        } else {
-            console.error("Geolocation is not supported by this browser");
-        }
-    }, []);
-
-    // if (location) {
-    //     console.log(JSON.stringify(location));
-    // }
-
     return (
-        <div className="App">
-            <div className="flex flex-col items-center justify-center pt-16">
-                <HamburgerButton />
-                <WeatherCard location={location} weatherData={weatherData} />
-                <ExploreCard />
-                <ForecastCard />
-            </div>
-        </div>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<PageNotFoundPage />} />
+        </Routes>
     );
 }
 
