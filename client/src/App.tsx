@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+import HamburgerButton from "./components/HamburgerButton";
 import WeatherCard from "./components/WeatherCard";
 import ExploreCard from "./components/ExploreCard";
-import HamburgerButton from "./components/HamburgerButton";
+import ForecastCard from "./components/ForecastCard";
 
 import getWeather from "./api/weather";
 
@@ -52,6 +53,7 @@ function App() {
                 <HamburgerButton />
                 <WeatherCard location={location} weatherData={weatherData} />
                 <ExploreCard />
+                <ForecastCard />
             </div>
         </div>
     );
