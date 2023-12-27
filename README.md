@@ -46,7 +46,7 @@ code formatting. Please install the Prettier extension
 for your code editor of choice and enable format on
 save. 
 
-Optionally you can manually run prettier in the
+**Optionally** you can manually run prettier in the
 terminal with:
 
     prettier . --write
