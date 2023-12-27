@@ -11,16 +11,23 @@
 
 Download the dependencies separately in the client **AND** server folders with:
 
-```npm install```
+    ```npm install```
 
 Make sure you're in the correct folder when you run the command.
 
 
 ### Running the App
 
+Before running the app, make sure you have all the dependencies installed, and that you have an `.env` file in the server folder with the following variables:
+    
+    ```
+    PORT=5000
+    OPENWEATHER_API_KEY="your-api-key-here"
+    ```
+
 To start the client and server, run the following command separately in the client **AND** server folders:
 
-```npm start```
+    ```npm start```
 
 The client will run on port 3000 and the server will run on port 5000. Production build is hosted by the server on port 5000.
 
