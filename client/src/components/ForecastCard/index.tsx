@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
-const ForecastTopBar = () => {
+const ForecastTopBar = ({ selectedForecast }: { selectedForecast: string }) => {
     return (
         <div className="flex flex-row gap-56">
-            <h1 className="text-black">Weekly Forecast</h1>
-            <h1 className="text-black">Hourly Forecast</h1>
+            <h1 className={selectedForecast === "weekly" ? "underline" : ""}>
+                Weekly Forecast
+            </h1>
+            <h1 className={selectedForecast === "hourly" ? "underline" : ""}>
+                Hourly Forecast
+            </h1>
         </div>
     );
 };
@@ -17,11 +21,17 @@ const Forecast = () => {
     );
 };
 
-class ForecastCard extends Component {
+type ForecastCardProps = {
+    selectedForecast: string;
+};
+
+class ForecastCard extends Component<ForecastCardProps> {
     render() {
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% mt-4 flex min-h-full flex-col items-center rounded-2xl bg-sky-300 p-4 text-white">
-                <ForecastTopBar />
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer bg-primary flex min-h-screen flex-col items-center rounded-2xl p-4 text-black">
+                <ForecastTopBar
+                    selectedForecast={this.props.selectedForecast}
+                />
                 <Forecast />
             </div>
         );

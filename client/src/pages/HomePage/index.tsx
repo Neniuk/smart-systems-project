@@ -14,6 +14,7 @@ const HomePage = () => {
     const [weatherData, setWeatherData] = useState<object | undefined>(
         undefined
     );
+    const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -48,11 +49,11 @@ const HomePage = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center pt-16">
+            <div className="flex flex-col items-center justify-center gap-8 pt-16">
                 <HamburgerButton />
                 <WeatherCard location={location} weatherData={weatherData} />
                 <ExploreCard />
-                <ForecastCard />
+                <ForecastCard selectedForecast={selectedForecast} />
             </div>
         </div>
     );
