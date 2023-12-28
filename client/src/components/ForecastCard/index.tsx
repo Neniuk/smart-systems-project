@@ -28,7 +28,7 @@ type ForecastCardProps = {
 class ForecastCard extends Component<ForecastCardProps> {
     render() {
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer bg-primary flex min-h-screen flex-col items-center rounded-2xl p-4 text-black">
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer bg-primary-transparent flex min-h-screen flex-col items-center rounded-2xl p-4 text-white">
                 <ForecastTopBar
                     selectedForecast={this.props.selectedForecast}
                 />

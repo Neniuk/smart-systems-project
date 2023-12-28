@@ -13,6 +13,7 @@ module.exports = {
                 128: "32rem",
             },
             colors: {
+                "primary-transparent": 'rgba(18, 52, 86, 0.8)', // Key is now a string
                 primary: "var(--primary-color)",
                 secondary: "var(--secondary-color)",
                 tertiary: "var(--tertiary-color)",
