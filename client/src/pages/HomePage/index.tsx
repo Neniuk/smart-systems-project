@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./HomePage.css";
 
 import HamburgerButton from "../../components/HamburgerButton";
 import WeatherCard from "../../components/WeatherCard";
@@ -7,10 +8,9 @@ import ForecastCard from "../../components/ForecastCard";
 
 import Sidebar from "../../components/Sidebar";
 import LocationSearchbar from "../../components/Sidebar/LocationSearchbar";
-
 import getWeather from "../../api/weather";
-
 import Location from "../../models/Location";
+import BackgroundImage from "../../components/BackgroundImage/BackgroundImage";
 
 const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
@@ -29,12 +29,9 @@ const HomePage = () => {
                     };
                     localStorage.setItem("location", JSON.stringify(location));
                     setLocation(location);
-
                     console.log("Location retrieved successfully");
-
-                    getWeather(location).then((weatherData) => {
-                        // console.log(weatherData);
-                        setWeatherData(weatherData);
+                    getWeather(location).then((data) => {
+                        setWeatherData(data);
                     });
                 },
                 (error) => {
@@ -46,25 +43,16 @@ const HomePage = () => {
         }
     }, []);
 
-    // if (location) {
-    //     console.log(JSON.stringify(location));
-    // }
-
+    // Wrap your components with a 'content' div to separate them from the BackgroundImage
     return (
-        <div>
-            <div className="flex flex-row">
-                <Sidebar />
-                <div className="flex flex-col items-center justify-center gap-8 pt-16">
-                    <HamburgerButton />
-                    <WeatherCard
-                        location={location}
-                        weatherData={weatherData}
-                    />
-                    <ExploreCard />
-                    <ForecastCard selectedForecast={selectedForecast} />
-                </div>
+        <BackgroundImage>
+            <div className="content flex flex-col items-center justify-center gap-8 pt-16">
+                <HamburgerButton />
+                <WeatherCard location={location} weatherData={weatherData} />
+                <ExploreCard />
+                <ForecastCard selectedForecast={selectedForecast} />
             </div>
-        </div>
+        </BackgroundImage>
     );
 };
 
