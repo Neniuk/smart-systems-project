@@ -5,6 +5,9 @@ import WeatherCard from "../../components/WeatherCard";
 import ExploreCard from "../../components/ExploreCard";
 import ForecastCard from "../../components/ForecastCard";
 
+import Sidebar from "../../components/Sidebar";
+import LocationSearchbar from "../../components/Sidebar/LocationSearchbar";
+
 import getWeather from "../../api/weather";
 
 import Location from "../../models/Location";
@@ -49,11 +52,17 @@ const HomePage = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center gap-8 pt-16">
-                <HamburgerButton />
-                <WeatherCard location={location} weatherData={weatherData} />
-                <ExploreCard />
-                <ForecastCard selectedForecast={selectedForecast} />
+            <div className="flex flex-row">
+                <Sidebar />
+                <div className="flex flex-col items-center justify-center gap-8 pt-16">
+                    <HamburgerButton />
+                    <WeatherCard
+                        location={location}
+                        weatherData={weatherData}
+                    />
+                    <ExploreCard />
+                    <ForecastCard selectedForecast={selectedForecast} />
+                </div>
             </div>
         </div>
     );
