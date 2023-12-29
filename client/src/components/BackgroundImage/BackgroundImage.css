@@ -1,10 +1,9 @@
 /* BackgroundImage.css */
 .background-image {
-    background-image: url('/public/weather-theme.jpg'); /* Replace with your actual image name */
+    background-image: url("/public/weather-theme.jpg"); /* Replace with your actual image name */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh; /* Ensure it covers the full viewport height */
     width: 100%; /* Ensure it covers the full viewport width */
-  }
-  
+}
