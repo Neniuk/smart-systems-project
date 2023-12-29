@@ -10,7 +10,7 @@ import Sidebar from "../../components/Sidebar";
 import LocationSearchbar from "../../components/Sidebar/LocationSearchbar";
 import getWeather from "../../api/weather";
 import Location from "../../models/Location";
-import BackgroundImage from "../../components/BackgroundImage/BackgroundImage";
+import BackgroundImage from "../../components/BackgroundImage";
 
 const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
