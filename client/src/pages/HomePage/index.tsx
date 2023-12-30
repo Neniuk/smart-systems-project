@@ -14,6 +14,7 @@ import BackgroundImage from "../../components/BackgroundImage";
 
 type HomePageProps = {};
 
+// TODO: Add props to component
 const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
     const [weatherData, setWeatherData] = useState<object | undefined>(
