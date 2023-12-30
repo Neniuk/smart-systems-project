@@ -12,6 +12,8 @@ import getWeather from "../../api/weather";
 import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 
+type HomePageProps = {};
+
 const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
     const [weatherData, setWeatherData] = useState<object | undefined>(
