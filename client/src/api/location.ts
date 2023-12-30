@@ -1,6 +1,6 @@
 import { Location } from "../models/Location";
 
-const getUserLocation = (handleLocation: (location: Location) => void, handleError: (error: string) => void): void => {
+const getLocation = (handleLocation: (location: Location) => void, handleError: (error: string) => void): void => {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
             (position: GeolocationPosition) => {
