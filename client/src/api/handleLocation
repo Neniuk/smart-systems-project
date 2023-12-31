@@ -1,0 +1,7 @@
+import Location from "../models/Location";
+import getWeather from "./path/to/getWeather"; 
+
+const handleLocation = (location: Location) => {
+    console.log("Location obtained:", location);
+    getWeather(location);
+};
