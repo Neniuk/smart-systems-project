@@ -1,4 +1,4 @@
-import { Location } from "../models/Location";
+import Location from "../models/Location";
 
 const getLocation = (handleLocation: (location: Location) => void, handleError: (error: string) => void): void => {
     if ("geolocation" in navigator) {
