@@ -14,6 +14,7 @@ module.exports = {
             },
             colors: {
                 "primary-transparent": 'rgba(18, 52, 86, 0.8)', // Key is now a string
+		"light-blue-transparent": 'rgba (0, 128, 255, 0.616)', 
                 primary: "var(--primary-color)",
                 secondary: "var(--secondary-color)",
                 tertiary: "var(--tertiary-color)",

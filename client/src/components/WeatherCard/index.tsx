@@ -38,7 +38,7 @@ class WeatherCard extends Component<WeatherCardProps> {
 
         // TODO: Make a button to refresh the weather data
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% flex flex-row justify-between rounded-2xl bg-sky-300 p-4 text-white">
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% flex flex-row justify-between rounded-2xl bg-opacity-35 bg-sky-300 p-4 text-white">
                 <div className="text-left">
                     <h1 className="text-3xl">{locationName}</h1>
                     <h2 className="text-sky-100">{weatherDescription}</h2>

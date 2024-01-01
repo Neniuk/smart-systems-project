@@ -1,0 +1,444 @@
+/* LocationSearchBar.css */
+.menu-container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 350;
+  font-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Width of the menu */
+  z-index: 1000;
+}
+
+.hamburger-icon {
+  position: fixed;
+  top: 30px;
+  left: 10px;
+  width: 30px;
+  height: 20px;
+
+  cursor: pointer;
+  z-index: 1100;
+  transition:  0.8s ease; /* Same duration as the transform of .menu-content */ 
+
+  
+}
+
+.hamburger-icon::before {
+  content: ''; /* Necessary for the pseudo-element to display */
+  position: absolute;
+  top: 70%;
+  left: 57.5%;
+  transform: translate(-50%, -50%); /* Centers the circle */
+  width: 40px; /* Diameter of the circle */
+  height: 40px; /* Diameter of the circle */
+  background-color: white;
+  border-radius: 50%; /* Makes it a circle */
+  z-index: -1; /* Ensures the circle is behind the bars */
+}
+
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2.25px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  
+
+}
+
+.hamburger-closed .bar1 {
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+  margin: 6px 8px;
+  transform: rotate(90deg);
+}
+
+.hamburger-closed .bar2 {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 6px 4px;
+  transform: rotate(90deg);
+}
+
+.hamburger-closed .bar3 {
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+  margin: 6px 0px;
+  transform: rotate(90deg);
+}
+
+/* Rotate first bar */
+.hamburger-open .bar1 {
+  transform: translate(4px, 7px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.hamburger-open .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.hamburger-open .bar3 {
+  transform: translate(4px, -10px) rotate(45deg);
+}
+
+.hamburger-open {
+  transform: translateX(1000%);
+}
+
+.hamburger-closed {
+  transform: translateX(0);
+}
+
+/*.bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+}
+*/
+
+
+
+
+.menu-content {
+  background-color: rgba(146, 212, 254, 0.912);
+  width: 300px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.8s ease;
+  transform: translateX(-100%);
+}
+
+.menu-open {
+  transform: translateX(0);
+}
+
+.menu-closed {
+  transform: translateX(-100%);
+}
+
+.search-section {
+  position:relative;
+  background-color: rgb(0, 187, 255);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  margin-right: 0px;
+  left: 0px;
+}
+
+.search-section input {
+  position: relative;
+  right: -10px;
+  background-color: rgb(0, 187, 255);
+  text-align: center;
+  border: none;
+  outline: none;
+  width: 85%;
+  color: white;
+}
+
+.search-section input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.search-section input:focus::placeholder {
+  color: transparent;
+}
+
+
+.current-location, .recent-locations, .location {
+  padding: 10px 0;
+}
+.current-location-text {
+  color: #0c78b3;
+}
+
+.recent-locations {
+  border-top: 1.5px dotted #3773ff;
+  border-bottom: 1.5px dotted #3773ff;
+  width: 100%;
+
+}
+
+.recent-locations-text {
+  color: #0c78b3;
+}
+
+.manage-locations {
+  position: relative;
+  top: 25px;
+  background-color: #00A1E0;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.manage-locations::after {
+  content: ''; /* Necessary for the pseudo-element to display */
+  position: absolute;
+  left: 0; /* Aligns the pseudo-element with the left edge of the button */
+  right: 0; /* Aligns the pseudo-element with the right edge of the button */
+  bottom: -30px; /* Positions the dotted line below the button */
+  border-bottom: 1.5px dotted #3773ff; /* Your desired dotted border */
+  width: 100%; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Created By KA, all rights reservered. >:D */
+/*-=====================-.                           ....:=*%%%%#########%##############%%%*
+-==================-:                               . ....:+#%%##%########%%##########%#%*
+-================-.                                 .    ...-*%%%%%%#####%%####%%%##%%#%#*
+-==============-.                             :=+++=-:.......:+%@@%%%###%%###%%%%%%#####*+
+-============-.                             =%@@#+=+#@#:.......=#@%%%%%%####%%%%%%#####%#*
+-===========:                              -@@@-    .:+%#-......:*@@@%%###%%%%%######%#%#*
+-==+===+==-.            :::.               +@@#       ..*@=......-#@%%%%%######%#%%%#####*
+=++***##*=           =#@@@@@%#=.           *@@*         .:%*:.....-#@%%%%%###############*
+=+**###++:         -%@#=-::-*%@%-          +@@#           -@*.....:+%%%%%%##############%*
++###%%#**.        =%#:       .#@%+         +@@#            :+-....:=%@@%%%#########%%%%%%*
++##%%%%#=.       :%#.          *@@=        +@@#           ...--....-#@@%%%%%%#####%%##%#%*
++###%%%%+:       *@-           .#@%*       =@@#       ........=:....=%@@@@@%%%%%%%#######*
++###%%#%%+       %#             .#%%#:     .#%+     ..........:-...::*@@@%%%%############+
++#%%%%%%%#:      #+               =%%#      .-.  ...:....:..........-#%@@%%%#**##########*
+*%%%%%@@@#-      #*                .=+.      . ...::::--===-::.......=*@%%%%%######%#####+
+*%%%%#%%%%=.     =%.                         ...::::-+#%%%#%%*=:......-#@@@@@%%##*##*####*
++####%%%%%%+..    #+                        ...::::-#%+#%%#+*%*-:......-#@@@%%%%#########*
+*%%#%%###%%*=.    .#.          ..........   ..::::-*%*=#%####+-........:+#%@@%%%%%%%%####*
++##%####%###*-.    :=      .:-===-:......    .....=+*=====-:........:..:-+%@@@%%%%%#####%*
++##%#####**##*=:    ..    .*#%%%#****=:..     .....--:.   .......=#***+::=+#@%%%%@@@@@@@@#
+*%%##%%###%%%%#+-:    . ..*%**#%%#+*#+-.. .:-+*#####*+-...    .+*=:...:=:--=%@@@@@@@@@@@@#
+*%#%%%%%%#%%#%@%#:     ..:*#=+%%%%#*+==--+#%%%%%%%%@@@#*=:..-*#-...-+=::-:-=*@@@@@@@@@@@@*
+*%#%####%%#%%%%@%=      ..=+++++==-::.:*#%%%%%%%%%%%@@@@%%+#%+:..-#%%%%-=::-+@@@@@@@@@%%*=
++##%%%###%%%@@@@%*.           ........*%%%%%%%%%#%%%@@@@%%%*-:::=%#%%%%*-:::-%@@@@@%%#*==-
++###%###%%%%%%%%%#-               .. -%%%#+=%%*++*%%%#%@%%%*:::=%#%%%%%#--:-*@@@@%**+====-
++#####%#%##%%%%@%@*:     :-=====-:...+%%%#**%%%%%%*#**%@%%%*--=%%%%%%%%#--:%@@%#*+=======-
++###%###%%%%%%%%%@%*:. =+-:....:-+**#*%%%%%%%%%%%@@@@@@@%%%+-=%%%%%%%%%*-::##+++=========-
++###%%#%%#%%%%%%%@@%*::+............:-#%%%%%%%%%@@@@@@@@%%*-=%%%%%%%%%%--:-++============-
++#%%%%%##%%%%%%%%%@%#=:=.:+###*+=:..::=#%@%@@@@@@@@@@%%%%*=-=@%%%%%%%%=:::-==============-
+*%%%%%#%#%%%%%%%@@@@%*:=:-@%%%%%%%%*+---+#%@@@@@@@@@%%%#+=+#@%%%%%%%%+::::-==============-
+*%%%%#%##%%%%@%@@@@@@#-:-:%%%%%%%%%#%%#*=:-=+*##%@@%%%%%%@@@%%%%%%%%#:::::-==============-
+*@%#%%%%%%%@%%%%@@@@@%+:=:-#%%%%%%%%%%%%%#+::::-=*%%@%%%%%%%%%%%%%%%=:::::-==============-
+*%%%%%%%@@@#%%%%@@@@@%#=:--:*%%%%%%%%%%%%%%%%#%%%######%%@@@%%%%%%%%::::::-==============-
+*@@@@@@@@%%%%@%%@@@@@@@%=.:-::+#%%%%%%%%%%%%%%%###%%@@@@@@@@@@@%%%%%::::::-===============
+*@@@@%%%%%%@@@@@@@@@@@@@%=::::::-+#%%%%%%%%%%%%%%%@@@@@@@@@@@@@%%%%%::::::-========++++**=
+*%%@@@@@@@%%@@@@@@@@@@@@@@*:::::::.:=#%%%%%%%%%@@@@@@@@@@@@@@@@%%%%%:::::::-++++*####****=
+*%%%%%%%%%%%#%%%%%%%%%%%@@@*::::::....-*%%%%%%%%@@@@@@@@@@@@@@%%%%%%::::::::+*###*****++=-
+*%%%%##*++=++++++++++*****##*-:::::.....:*%%%%%%%%@@%%@@@@@@%#+*%%%%:::.::.:-=******++===-
+*###*+=============+++++++++++-::::.......-#%%%%%##%@@@@@@+****+%%%%-:::::.:-==*******++=-
+=+=======================++++++=::.........:#%%%%%###%%#*++##****%%%=:::::::-==*+*+===**+=
+-=======================++++++++=::........::+%%%%%#*#%%%####**#%%%%+.::::::===+==++=---=-
+-=====================++++++++++++-::.......::=%%%%%%#####*#*##%%%%%*.:::::====+-=-++=---:
+-=====================+++++++++*##%*-::......::-%%%%@@%%####%%%%%%%%*.::::====+=----+==--:
+-===================+++++++*#%%####%%=:-:.....:::#%%%%%%%%%%%%%%%%%@=.:-======+---:------:
+-==============================+**#%%%*-:-::....::-*%%%%%######%%%%+:-++==+++*==--::::::::
+-==================---:::---==+**##%@@%#=::::::::...:*%%###%%%#*+=::=+==+++++==-----::::::
+-===========----::::::::---=+++***##%%%%#+-:::---::....:===-::..:-=+++++*#*+=========----:
+-=====---:::::::::::::::-=+++++++****##%%##=----=====-:::::--==+++**###*+**+=====---::---:
+*/
+
+
+
+
+
