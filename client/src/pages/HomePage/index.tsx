@@ -10,7 +10,10 @@ import getWeather from "../../api/weather";
 import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 
-const HomePage: React.FC = () => {
+type HomePageProps = {};
+
+// TODO: Add props to component
+const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
     const [weatherData, setWeatherData] = useState<object | undefined>(undefined);
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
