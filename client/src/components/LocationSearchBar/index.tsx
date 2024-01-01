@@ -26,7 +26,7 @@ const LocationSearchBar: React.FC = () => {
         </div>
         <div className="recent-locations">
         <span className="recent-locations-text">Recent locations</span>
-          <div className="location">Lappeenranta</div>
+          <div className="location">Vantaa</div>
           <div className="location">Oulu</div>
           <div className="location">Lappeenranta</div>
           <div className="location">Hämeenlinna</div>
