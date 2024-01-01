@@ -6,7 +6,7 @@ import WeatherCard from "../../components/WeatherCard";
 import ExploreCard from "../../components/ExploreCard";
 import ForecastCard from "../../components/ForecastCard";
 import LocationSearchBar from "../../components/LocationSearchBar"; // Make sure the import matches the renamed file
-import getWeather from "../../api/weather";
+import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 

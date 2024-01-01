@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Location from "../../models/Location";
 import Weather from "../../models/Weather";
 
-import getWeather from "../../api/weather";
+import getWeather from "../../api/getWeather";
 
 type WeatherCardProps = {
     location?: Location;

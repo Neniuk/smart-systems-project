@@ -22,10 +22,10 @@ const LocationSearchBar: React.FC = () => {
         </div>
         <div className="current-location">
           <span className="current-location-text">Current location</span>
-          <div className="current-location">Lahti</div>
+          <div className="current-locationLahti">Lahti</div>
         </div>
         <div className="recent-locations">
-          <span className="recent-locations-text">Recent locations</span>
+        <span className="recent-locations-text">Recent locations</span>
           <div className="location">Lappeenranta</div>
           <div className="location">Oulu</div>
           <div className="location">Lappeenranta</div>

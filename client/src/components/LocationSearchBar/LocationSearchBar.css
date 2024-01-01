@@ -155,7 +155,15 @@
 .current-location, .recent-locations, .location {
   padding: 10px 0;
 }
+
+.current-locationLahti:hover {
+  background-color: white; /* Set the background color to white */
+  border-radius: 10px; 
+  transform: scale(1.15); /* Enlarge text a bit on hover */
+  text-align: center;
+}
 .current-location-text {
+  font-size: 150%;
   color: #0c78b3;
 }
 
@@ -163,12 +171,21 @@
   border-top: 1.5px dotted #3773ff;
   border-bottom: 1.5px dotted #3773ff;
   width: 100%;
-
 }
 
 .recent-locations-text {
+  font-size: 150%;
   color: #0c78b3;
 }
+
+.location:hover {
+  background-color: white; /* Set the background color to white */
+  border-radius: 10px; 
+  transform: scale(1.15); /* Enlarge text a bit on hover */
+  text-align: center;
+}
+  
+
 
 .manage-locations {
   position: relative;
