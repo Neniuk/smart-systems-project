@@ -20,22 +20,22 @@
 
   cursor: pointer;
   z-index: 1100;
-  transition:  0.8s ease; /* Same duration as the transform of .menu-content */ 
+  transition:  0.8s ease; 
 
   
 }
 
 .hamburger-icon::before {
-  content: ''; /* Necessary for the pseudo-element to display */
+  content: ''; 
   position: absolute;
   top: 70%;
   left: 57.5%;
-  transform: translate(-50%, -50%); /* Centers the circle */
-  width: 40px; /* Diameter of the circle */
-  height: 40px; /* Diameter of the circle */
+  transform: translate(-50%, -50%); 
+  width: 40px; 
+  height: 40px; 
   background-color: white;
-  border-radius: 50%; /* Makes it a circle */
-  z-index: -1; /* Ensures the circle is behind the bars */
+  border-radius: 50%; 
+  z-index: -1; 
 }
 
 .bar1, .bar2, .bar3 {
@@ -100,9 +100,22 @@
   background-color: #333;
 }
 */
+.title-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.weather-planner-title {
+  font-size: 30px; 
+  font-weight: bold;
+  
+}
 
 
-
+.arrow-icon {
+  display: inline-block;
+  margin-right: 10px; 
+}
 
 .menu-content {
   background-color: rgba(146, 212, 254, 0.912);
@@ -156,16 +169,23 @@
   padding: 10px 0;
 }
 
-.current-locationLahti:hover {
-  background-color: white; /* Set the background color to white */
-  border-radius: 10px; 
-  transform: scale(1.15); /* Enlarge text a bit on hover */
+.current-location {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  
+}
+
+.current-location-text, .current-location-city {
+  margin-right: 5px; 
+  text-align: center;
+  color: #0c78b3;
+  font-size: 130%;
+  font-weight: light bold;
   text-align: center;
 }
-.current-location-text {
-  font-size: 150%;
-  color: #0c78b3;
-}
+
 
 .recent-locations {
   border-top: 1.5px dotted #3773ff;
@@ -174,40 +194,24 @@
 }
 
 .recent-locations-text {
-  font-size: 150%;
+  font-size: 130%;
   color: #0c78b3;
+  font-weight: light bold;
 }
 
 .location:hover {
-  background-color: white; /* Set the background color to white */
+  background-color: white; 
   border-radius: 10px; 
-  transform: scale(1.15); /* Enlarge text a bit on hover */
+  transform: scale(1.15); 
   text-align: center;
 }
-  
 
 
-.manage-locations {
-  position: relative;
-  top: 25px;
-  background-color: #00A1E0;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  text-align: center;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-}
-.manage-locations::after {
-  content: ''; /* Necessary for the pseudo-element to display */
-  position: absolute;
-  left: 0; /* Aligns the pseudo-element with the left edge of the button */
-  right: 0; /* Aligns the pseudo-element with the right edge of the button */
-  bottom: -30px; /* Positions the dotted line below the button */
-  border-bottom: 1.5px dotted #3773ff; /* Your desired dotted border */
-  width: 100%; 
+.menu-options {
+  font-weight: bold; 
+  display: block; 
+  margin: 10px 0; 
+  text-transform: uppercase; 
 }
 
 
