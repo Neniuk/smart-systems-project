@@ -4,6 +4,8 @@ const ADDRESS = "http://localhost:";
 // Reference: https://stackoverflow.com/questions/49579028/adding-an-env-file-to-a-react-project
 const PORT = process.env.REACT_APP_SERVER_PORT || "5000";
 
+console.log("SERVER PORT: ", PORT);
+
 const getWeather = async (location: Location) => {
     // console.log("getWeather() called");
     const req: string = ADDRESS + PORT + "/weather";
