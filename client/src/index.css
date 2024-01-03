@@ -14,6 +14,20 @@
     --text-color-dark: #000000;
 
     --border-radius: 2rem;
+
+    /* Colors from the figma */
+    /* TODO: Gradient colors need to be colorpicked from the figma */
+    --background-primary: #edfbff;
+    --background-secondary: #0075ff;
+
+    --main-card-primary: #97d1fd;
+    --main-card-secondary: #ffe600;
+
+    --secondary-card-primary: #0072dc;
+    --secondary-card-secondary: #fff;
+
+    --text-dark: #000000;
+    --text-light: #ffffff;
 }
 
 body {

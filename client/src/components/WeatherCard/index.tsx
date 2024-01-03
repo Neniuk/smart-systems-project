@@ -38,7 +38,8 @@ class WeatherCard extends Component<WeatherCardProps> {
 
         // TODO: Make a button to refresh the weather data
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer flex flex-row justify-between rounded-2xl bg-opacity-35 bg-primary-transparent p-4 text-white">
+            // TODO: Adjust card background gradient to match the figma design
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary flex flex-row justify-between rounded-2xl bg-gradient-to-l p-4 text-white">
                 <div className="text-left">
                     <h1 className="text-3xl">{locationName}</h1>
                     <h2 className="text-sky-100">{weatherDescription}</h2>

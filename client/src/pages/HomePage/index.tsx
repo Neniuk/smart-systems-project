@@ -1,6 +1,5 @@
 // HomePage.tsx
 import React, { useEffect, useState } from "react";
-import "./HomePage.css";
 
 import WeatherCard from "../../components/WeatherCard";
 import ExploreCard from "../../components/ExploreCard";
@@ -15,7 +14,9 @@ type HomePageProps = {};
 // TODO: Add props to component
 const HomePage = () => {
     const [location, setLocation] = useState<Location | undefined>(undefined);
-    const [weatherData, setWeatherData] = useState<object | undefined>(undefined);
+    const [weatherData, setWeatherData] = useState<object | undefined>(
+        undefined
+    );
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
 
     useEffect(() => {
@@ -42,15 +43,14 @@ const HomePage = () => {
     }, []);
 
     return (
-        <BackgroundImage>
-
+        <div className="from-backgroundPrimary to-backgroundSecondary min-h-screen bg-gradient-to-b">
             <div className="content flex flex-col items-center justify-center gap-8 pt-16">
                 <LocationSearchBar /> {/* Corrected the component name here */}
                 <WeatherCard location={location} weatherData={weatherData} />
                 <ExploreCard />
                 <ForecastCard selectedForecast={selectedForecast} />
             </div>
-        </BackgroundImage>
+        </div>
     );
 };
 
