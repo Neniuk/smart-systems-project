@@ -11,6 +11,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/activities" element={<h1>Activities</h1>} />
             <Route path="*" element={<PageNotFoundPage />} />
         </Routes>
     );

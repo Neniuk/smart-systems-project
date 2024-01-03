@@ -17,17 +17,20 @@
 
     /* Colors from the figma */
     /* TODO: Gradient colors need to be colorpicked from the figma */
-    --background-primary: #edfbff;
-    --background-secondary: #0075ff;
+    --background-primary: #effbff;
+    --background-secondary: #d0ebff;
 
-    --main-card-primary: #97d1fd;
-    --main-card-secondary: #ffe600;
+    --main-card-primary: #9ed3f9;
+    --main-card-secondary: #bdddd0;
 
-    --secondary-card-primary: #0072dc;
-    --secondary-card-secondary: #fff;
+    --secondary-card-primary: #d1e8fb;
+    --secondary-card-secondary: #daecfa;
+
+    --text-light: #ffffff;
+    --text-light-secondary: #f4f4f4;
 
     --text-dark: #000000;
-    --text-light: #ffffff;
+    --text-dark-secondary: #4d4d4d;
 }
 
 body {

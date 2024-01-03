@@ -1,5 +1,5 @@
-// HomePage.tsx
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import WeatherCard from "../../components/WeatherCard";
 import ExploreCard from "../../components/ExploreCard";
@@ -44,10 +44,12 @@ const HomePage = () => {
 
     return (
         <div className="from-backgroundPrimary to-backgroundSecondary min-h-screen bg-gradient-to-b">
-            <div className="content flex flex-col items-center justify-center gap-8 pt-16">
+            <div className="content text-textLight flex flex-col items-center justify-center gap-8 pt-16">
                 <LocationSearchBar /> {/* Corrected the component name here */}
                 <WeatherCard location={location} weatherData={weatherData} />
-                <ExploreCard />
+                <Link to="/activities">
+                    <ExploreCard />
+                </Link>
                 <ForecastCard selectedForecast={selectedForecast} />
             </div>
         </div>
