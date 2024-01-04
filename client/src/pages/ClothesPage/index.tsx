@@ -5,6 +5,7 @@ import LowerBodyCard from "../../components/LowerBodyCard";
 import FootCard from "../../components/FootCard";
 import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
+import LocationSearchBar from "../../components/LocationSearchBar";
 type WeatherCard = {
     weatherData?: any;
 };
