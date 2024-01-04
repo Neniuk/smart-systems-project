@@ -47,6 +47,9 @@ const HomePage = () => {
             <div className="content text-textLight flex flex-col items-center justify-center gap-8 pt-16">
                 <LocationSearchBar /> {/* Corrected the component name here */}
                 <WeatherCard location={location} weatherData={weatherData} />
+                <Link to='/clothes'>
+                    <WeatherCard location={location} weatherData={weatherData} />
+                </Link>
                 <Link to="/activities">
                     <ExploreCard />
                 </Link>

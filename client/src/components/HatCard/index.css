@@ -1,0 +1,7 @@
+.hat-item-box{
+    max-width:7rem;
+    max-height:7rem;
+    min-width:3rem;
+    min-height:3rem;
+    aspect-ratio: 1/1;
+}
