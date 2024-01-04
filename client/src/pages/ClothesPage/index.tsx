@@ -5,6 +5,7 @@ import LowerBodyCard from "../../components/LowerBodyCard";
 import FootCard from "../../components/FootCard";
 import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
+import LocationSearchBar from "../../components/LocationSearchBar";
 type WeatherCard = {
     weatherData?: any;
 };
@@ -60,6 +61,7 @@ const ClothesPage: React.FC = () => {
 
     return <>
         <div className=" w-screen h-screen flex items-center">
+            <LocationSearchBar /> {/* Corrected the component name here */}
             <div className="w-4/5 mx-auto my-auto flex bg-white rounded-md">
                 <div className="flex-1 flex flex-col">
                     <div className="p-4">
