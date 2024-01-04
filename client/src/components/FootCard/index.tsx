@@ -42,7 +42,7 @@ const FootCard: React.FC<FootCardProps> = (props) => {
     ];
 
     return (
-        <div className="flex justify-around items-center space-x-4 bg-gradient-to-r from-blue-200 to-green-200 p-4 rounded-xl shadow-md">
+        <div className="flex justify-around items-center space-x-4 bg-gradient-to-r from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary p-4 rounded-xl shadow-md">
             {items.map((item, ndx) => (
                 <div key={ndx} className={`flex flex-col items-center ${getClass(item.label)}`}>
                     <div className="rounded-md p-2 foot-item-box">
