@@ -16,13 +16,18 @@ type ClothesPageProps = {
 };
 
 const ClothesPage = (props: ClothesPageProps) => {
-    const [celsius, setCelsius] = useState<{
-        minTempCelsius: number;
-        maxTempCelsius: number;
-    } | null>(null);
+    // const [celsius, setCelsius] = useState<{
+    //     minTempCelsius: number;
+    //     maxTempCelsius: number;
+    // } | null>(null);
 
-    if (!celsius)
-        return <div className=" flex h-screen w-screen items-center"></div>;
+    // setCelsius({
+    //     minTempCelsius: 0,
+    //     maxTempCelsius: 0,
+    // });
+
+    // if (!celsius)
+    //     return <div className=" flex h-screen w-screen items-center"></div>;
 
     return (
         <>
@@ -31,14 +36,18 @@ const ClothesPage = (props: ClothesPageProps) => {
                     <div className="flex flex-1 flex-col">
                         <div className="p-4">
                             <HatCard
-                                maxTempCelsius={celsius.maxTempCelsius}
-                                minTempCelsius={celsius.minTempCelsius}
+                                // maxTempCelsius={celsius.maxTempCelsius}
+                                // minTempCelsius={celsius.minTempCelsius}
+                                maxTempCelsius={0}
+                                minTempCelsius={0}
                             />
                         </div>
                         <div className="flex-1 p-4">
                             <UpperBodyCard
-                                maxTempCelsius={celsius.maxTempCelsius}
-                                minTempCelsius={celsius.minTempCelsius}
+                                // maxTempCelsius={celsius.maxTempCelsius}
+                                // minTempCelsius={celsius.minTempCelsius}
+                                maxTempCelsius={0}
+                                minTempCelsius={0}
                             />
                         </div>
                     </div>
@@ -46,15 +55,19 @@ const ClothesPage = (props: ClothesPageProps) => {
                         <div className="flex-4  p-4">
                             <div className="flex-1 ">
                                 <LowerBodyCard
-                                    maxTempCelsius={celsius.maxTempCelsius}
-                                    minTempCelsius={celsius.minTempCelsius}
+                                    // maxTempCelsius={celsius.maxTempCelsius}
+                                    // minTempCelsius={celsius.minTempCelsius}
+                                    maxTempCelsius={0}
+                                    minTempCelsius={0}
                                 />
                             </div>
                         </div>
                         <div className="p-4">
                             <FootCard
-                                maxTempCelsius={celsius.maxTempCelsius}
-                                minTempCelsius={celsius.minTempCelsius}
+                                // maxTempCelsius={celsius.maxTempCelsius}
+                                // minTempCelsius={celsius.minTempCelsius}
+                                maxTempCelsius={0}
+                                minTempCelsius={0}
                             />
                         </div>
                     </div>
@@ -63,4 +76,5 @@ const ClothesPage = (props: ClothesPageProps) => {
         </>
     );
 };
+
 export default ClothesPage;
