@@ -1,7 +1,6 @@
 import React from "react";
 
 type HatCardProps = {
-  // You can add specific props for your hats here if needed
 };
 
 const HatCard: React.FC<HatCardProps> = () => {
