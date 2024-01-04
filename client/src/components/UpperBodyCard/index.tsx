@@ -32,7 +32,7 @@ const UpperBodyCard: React.FC<UpperBodyProps> = (props) => {
   };
 
   return (
-    <div className="flex h-full justify-center items-center space-x-1 bg-gradient-to-r from-blue-200 to-green-200 p-4 rounded-xl shadow-md">
+    <div className="flex h-full justify-center items-center space-x-1 bg-gradient-to-r from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary p-4 rounded-xl shadow-md">
       {selectedItems.map((subArray, subIndex) => (
         <React.Fragment key={subIndex}>
           {subArray.map((item, index) => (
@@ -57,7 +57,7 @@ const UpperBodyCard: React.FC<UpperBodyProps> = (props) => {
 
 export default UpperBodyCard;
 
-// 获取每个元素对应的图片
+
 const getImage = (item: string) => {
   switch (item) {
     case "T-Shirt":

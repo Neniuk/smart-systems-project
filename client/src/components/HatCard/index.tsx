@@ -44,7 +44,7 @@ const HatCard: React.FC<HatCardProps> = (props) => {
   };
 
   return (
-    <div className="flex justify-between items-center space-x-4 bg-gradient-to-r from-blue-200 to-green-200 p-4 rounded-xl shadow-md">
+    <div className="flex justify-between items-center space-x-4 bg-gradient-to-r from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary p-4 rounded-xl shadow-md">
       {["No Hat", "Cap", "Autumn Hat", "Winter Hat"].map((hat, ndx) => (
         <div key={ndx} className={`flex flex-col items-center ${hatSelect === ndx ? "" : "opacity-50"}`}>
           <img src={getHatImage(ndx)} alt={hat} className="rounded-full p-2 hat-item-box" />

@@ -36,7 +36,7 @@ const LowerBodyCard: React.FC<LowerBodyProps> = (props) => {
   ];
 
   return (
-    <div className="flex justify-center items-center space-x-1 bg-gradient-to-r from-blue-200 to-green-200 p-4 rounded-xl shadow-md">
+    <div className="flex justify-center items-center space-x-1 bg-gradient-to-r from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary p-4 rounded-xl shadow-md">
       {selectedItem.map((subArray, subIndex) => (
         <React.Fragment key={subIndex}>
           {subArray.map((item, index) => (
@@ -61,7 +61,7 @@ const LowerBodyCard: React.FC<LowerBodyProps> = (props) => {
 
 export default LowerBodyCard;
 
-// 获取每个元素对应的图片
+
 const getImage = (item: string) => {
   switch (item) {
     case 'Jeans':
