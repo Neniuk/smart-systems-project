@@ -14,12 +14,6 @@ class WeatherCard extends Component<WeatherCardProps> {
     render() {
         const { location, weatherData } = this.props;
 
-        // if (location && weatherData) {
-        //     console.log("WeatherCard props:");
-        //     console.log(location);
-        //     console.log(weatherData);
-        // }
-
         // TODO: Could mby make a type for these?
         const locationName: string = weatherData?.weather.name;
 
@@ -39,28 +33,38 @@ class WeatherCard extends Component<WeatherCardProps> {
 
         const timestamp: number = weatherData?.time;
         // Timestamp to readable date and time
-        const date = new Date(timestamp * 1000);
+        const datetime = timestamp ? new Date(timestamp) : undefined;
 
         // TODO: Make a button to refresh the weather data
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary flex flex-row justify-between rounded-2xl bg-gradient-to-l p-4">
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary flex flex-row justify-between rounded-2xl bg-gradient-to-l p-4">
+                <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="text-left">
-                    <h1 className="text-3xl">{locationName}</h1>
+                    <h1 className="text-3xl">{locationName || "Loading..."}</h1>
                     <h2 className="text-textLightSecondary">
-                        {weatherDescription}
+                        {weatherDescription || "Loading..."}
                     </h2>
                     <h2 className="text-textLightSecondary">
-                        {Math.round(minTempCelsius)}°C /{" "}
-                        {Math.round(maxTempCelsius)}°C
+                        {minTempCelsius && maxTempCelsius
+                            ? `${Math.round(minTempCelsius)}°C / ${Math.round(
+                                  maxTempCelsius
+                              )}°C`
+                            : "Loading..."}
                     </h2>
                 </div>
                 <div className="text-right">
-                    <h1 className="text-4xl">{Math.round(tempCelsius)}°C</h1>
+                    <h1 className="text-4xl">
+                        {tempCelsius
+                            ? `${Math.round(tempCelsius)}°C`
+                            : "Loading..."}
+                    </h1>
                     <h2 className="text-textLightSecondary">
-                        Wind speed: {windSpeed} m/s
+                        {windSpeed ? `${windSpeed} m/s` : "Loading..."}
                     </h2>
-                    <h2 className="text-textLightSecondary">
-                        Fetched: {date.toLocaleString()}
+                    <h2 className="text-textLightTertiary">
+                        {datetime
+                            ? `Updated: ${datetime.toLocaleString()}`
+                            : "Loading..."}
                     </h2>
                 </div>
             </div>

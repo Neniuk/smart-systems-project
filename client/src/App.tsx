@@ -11,6 +11,7 @@ import Location from "./models/Location";
 import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
+import getWeeklyWeather from "./api/getWeeklyWeather";
 
 // TODO: Cleanup the useEffects
 function App() {
@@ -20,6 +21,7 @@ function App() {
     >(undefined);
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
 
+    // Gets location data on first render
     useEffect(() => {
         getLocation()
             .then((locationData) => {
@@ -32,6 +34,9 @@ function App() {
             });
     }, []);
 
+    // Gets weather data when location data is fetched
+    // TODO: Update useEffect to also fetch forecast data and
+    // update the Weather.ts type to include forecast data
     useEffect(() => {
         if (location) {
             const timestamp = new Date().getTime();
@@ -45,6 +50,8 @@ function App() {
         }
     }, [location]);
 
+    // Updates weather and location data every hour, or if it's not yet fetched
+    // Checked every minute
     useEffect(() => {
         const interval = setInterval(
             () => {
@@ -90,6 +97,19 @@ function App() {
 
         return () => clearInterval(interval); // Clean up on component unmount
     }, [location, weather]);
+
+    // Fetch forecast data test
+    // TODO: Remove later
+    // useEffect(() => {
+    //     if (location) {
+    //         getWeeklyWeather(location).then((data) => {
+    //             if (data) {
+    //                 console.log("Forecast data:");
+    //                 console.log(data);
+    //             }
+    //         });
+    //     }
+    // }, [location]);
 
     return (
         <Routes>

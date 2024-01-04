@@ -4,11 +4,9 @@ const ADDRESS = "http://localhost:";
 // Reference: https://stackoverflow.com/questions/49579028/adding-an-env-file-to-a-react-project
 const PORT = process.env.REACT_APP_SERVER_PORT || "5000";
 
-console.log("SERVER PORT: ", PORT);
-
-const getWeather = async (location: Location) => {
-    console.log("Fetching weather data for location:", location);
-    const req: string = ADDRESS + PORT + "/weather";
+const getHourlyWeather = async (location: Location) => {
+    // console.log("getWeather() called");
+    const req: string = ADDRESS + PORT + "/weather/forecasts/hourly";
 
     try {
         const res: Response = await fetch(req, {
@@ -21,7 +19,7 @@ const getWeather = async (location: Location) => {
         // console.log("Response: ", res);
 
         const data: object = await res.json();
-        console.log("Current weather: ", data);
+        console.log("Hourly forecast: ", data);
 
         return data;
     } catch (err: any) {
@@ -29,4 +27,4 @@ const getWeather = async (location: Location) => {
     }
 };
 
-export default getWeather;
+export default getHourlyWeather;

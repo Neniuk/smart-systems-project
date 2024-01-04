@@ -24,6 +24,7 @@ module.exports = {
                 borderColor: "var(--border-color)",
                 textLight: "var(--text-light)",
                 textLightSecondary: "var(--text-light-secondary)",
+                textLightTertiary: "var(--text-light-tertiary)",
                 textDark: "var(--text-dark)",
                 textDarkSecondary: "var(--text-dark-secondary)",
                 backgroundPrimary: "var(--background-primary)",

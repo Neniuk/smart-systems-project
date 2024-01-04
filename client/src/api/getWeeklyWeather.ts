@@ -6,7 +6,7 @@ const PORT = process.env.REACT_APP_SERVER_PORT || "5000";
 
 const getWeeklyWeather = async (location: Location) => {
     // console.log("getWeather() called");
-    const req: string = ADDRESS + PORT + "/weather";
+    const req: string = ADDRESS + PORT + "/weather/forecasts/weekly";
 
     try {
         const res: Response = await fetch(req, {
@@ -19,7 +19,7 @@ const getWeeklyWeather = async (location: Location) => {
         // console.log("Response: ", res);
 
         const data: object = await res.json();
-        // console.log("Data: ", data);
+        console.log("Weekly forecast: ", data);
 
         return data;
     } catch (err: any) {

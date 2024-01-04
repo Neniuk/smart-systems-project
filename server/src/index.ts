@@ -3,6 +3,8 @@ import cors from "cors";
 import path from "path";
 
 import weatherRouter from "./routes/weather";
+import weatherForecastHourlyRouter from "./routes/weather/forecasts/hourly";
+import weatherForecastWeeklyRouter from "./routes/weather/forecasts/weekly";
 
 const app: Express = express();
 const PORT: string = process.env.PORT || "5000";
@@ -13,6 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../../client/build")));
 
 app.use("/weather", weatherRouter);
+app.use("/weather/forecasts/hourly", weatherForecastHourlyRouter);
+app.use("/weather/forecasts/weekly", weatherForecastWeeklyRouter);
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
