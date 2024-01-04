@@ -11,8 +11,8 @@ import Location from "./models/Location";
 import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
-import { get } from "http";
 
+// TODO: Cleanup the useEffects
 function App() {
     const [location, setLocation] = useState<Location | undefined>(undefined);
     const [weather, setWeather] = useState<
@@ -24,7 +24,6 @@ function App() {
         getLocation()
             .then((locationData) => {
                 if (locationData) {
-                    console.log("Getting location");
                     setLocation(locationData);
                 }
             })
@@ -35,7 +34,6 @@ function App() {
 
     useEffect(() => {
         if (location) {
-            console.log("Getting weather");
             const timestamp = new Date().getTime();
             getWeather(location).then((data) => {
                 if (data) {
@@ -48,37 +46,47 @@ function App() {
     }, [location]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            const currentTime = new Date().getTime();
-            if (
-                !weather ||
-                !location ||
-                currentTime - weather.time > 3600000 ||
-                currentTime - location.time > 3600000
-            ) {
-                // If the weather or location data is over an hour old, or not yet fetched, refetch both
-                getLocation()
-                    .then((locationData) => {
-                        if (locationData) {
-                            console.log("Getting location");
-                            setLocation(locationData);
+        const interval = setInterval(
+            () => {
+                const currentTime = new Date().getTime();
+                if (
+                    !weather ||
+                    !location ||
+                    currentTime - weather.time > 3600000 ||
+                    currentTime - location.time > 3600000
 
-                            console.log("Getting weather");
-                            getWeather(locationData).then((weatherData) => {
-                                if (weatherData) {
-                                    setWeather({
-                                        weather: weatherData,
-                                        time: currentTime,
-                                    });
-                                }
-                            });
-                        }
-                    })
-                    .catch((error) => {
-                        console.error("Failed to get location", error);
-                    });
-            }
-        }, 60000); // Check every minute
+                    // Ten second interval for testing
+                    // currentTime - weather.time > 10000 ||
+                    // currentTime - location.time > 10000
+                ) {
+                    // If the weather or location data is over an hour old, or not yet fetched, refetch both
+                    console.log("Refetching weather and location data");
+                    getLocation()
+                        .then((locationData) => {
+                            if (locationData) {
+                                setLocation(locationData);
+
+                                getWeather(locationData).then((weatherData) => {
+                                    if (weatherData) {
+                                        setWeather({
+                                            weather: weatherData,
+                                            time: currentTime,
+                                        });
+                                    }
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Failed to get location", error);
+                        });
+                }
+            },
+            // Ten second interval for testing
+            // 10000
+
+            // Check every minute
+            60000
+        );
 
         return () => clearInterval(interval); // Clean up on component unmount
     }, [location, weather]);
