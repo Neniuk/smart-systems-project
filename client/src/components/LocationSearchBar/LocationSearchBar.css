@@ -108,6 +108,7 @@
 .weather-planner-title {
   font-size: 30px; 
   font-weight: bold;
+  color: black;
   
 }
 
@@ -174,6 +175,7 @@
   justify-content: center;
   align-items: center; 
   width: 100%;
+  color: black;
   
 }
 
@@ -187,10 +189,12 @@
 }
 
 
+
 .recent-locations {
   border-top: 1.5px dotted #3773ff;
   border-bottom: 1.5px dotted #3773ff;
   width: 100%;
+  color: black;
 }
 
 .recent-locations-text {
@@ -198,6 +202,9 @@
   color: #0c78b3;
   font-weight: light bold;
 }
+
+
+
 
 .location:hover {
   background-color: white; 
@@ -212,6 +219,7 @@
   display: block; 
   margin: 10px 0; 
   text-transform: uppercase; 
+  color: black;
 }
 
 
