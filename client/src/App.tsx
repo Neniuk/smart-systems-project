@@ -47,6 +47,42 @@ function App() {
         }
     }, [location]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const currentTime = new Date().getTime();
+            if (
+                !weather ||
+                !location ||
+                currentTime - weather.time > 3600000 ||
+                currentTime - location.time > 3600000
+            ) {
+                // If the weather or location data is over an hour old, or not yet fetched, refetch both
+                getLocation()
+                    .then((locationData) => {
+                        if (locationData) {
+                            console.log("Getting location");
+                            setLocation(locationData);
+
+                            console.log("Getting weather");
+                            getWeather(locationData).then((weatherData) => {
+                                if (weatherData) {
+                                    setWeather({
+                                        weather: weatherData,
+                                        time: currentTime,
+                                    });
+                                }
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Failed to get location", error);
+                    });
+            }
+        }, 60000); // Check every minute
+
+        return () => clearInterval(interval); // Clean up on component unmount
+    }, [location, weather]);
+
     return (
         <Routes>
             <Route path="/" element={<HomePage {...{ location, weather }} />} />
