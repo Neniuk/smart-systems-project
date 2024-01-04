@@ -43,11 +43,23 @@ const LocationSearchBar: React.FC = () => {
           <div className="location">Helsinki</div>
         </div>
 
-        <div className="menu-options">
-          <div className="menu-options">ACTIVITIES</div>
-          <div className="menu-options">SETTINGS</div>
-          <div className="menu-options">SETTINGS</div>
-          <div className="menu-options">HOME</div>
+        {/*Forwards the user to the correct page when they click on the options
+        TO DO: Add the correct web pages in the href part when they are done
+  */}
+        <div className="menu-options" style={{ display: 'flex', flexDirection: 'column' }}>
+        <a href ="activitiespage.html" target="_blank" rel="noopener noreferrer">
+            <i>
+              ACTIVITIES
+              </i>
+        </a>
+        <a href ="activitiespage.html" target="_blank" rel="noopener noreferrer">
+            <i>
+              SETTINGS
+              </i>
+        </a>
+        <a href ="activitiespage.html" target="_blank" rel="noopener noreferrer">
+            <i>HOME</i>
+        </a>
         </div>
         
       </div>
