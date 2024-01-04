@@ -37,9 +37,12 @@ class WeatherCard extends Component<WeatherCardProps> {
 
         const windSpeed: number = weatherData?.weather.wind.speed;
 
+        const timestamp: number = weatherData?.time;
+        // Timestamp to readable date and time
+        const date = new Date(timestamp * 1000);
+
         // TODO: Make a button to refresh the weather data
         return (
-            // TODO: Adjust card background gradient to match the figma design
             <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary flex flex-row justify-between rounded-2xl bg-gradient-to-l p-4">
                 <div className="text-left">
                     <h1 className="text-3xl">{locationName}</h1>
@@ -53,8 +56,11 @@ class WeatherCard extends Component<WeatherCardProps> {
                 </div>
                 <div className="text-right">
                     <h1 className="text-4xl">{Math.round(tempCelsius)}°C</h1>
-                    <h2 className="text-sky-100">
+                    <h2 className="text-textLightSecondary">
                         Wind speed: {windSpeed} m/s
+                    </h2>
+                    <h2 className="text-textLightSecondary">
+                        Fetched: {date.toLocaleString()}
                     </h2>
                 </div>
             </div>

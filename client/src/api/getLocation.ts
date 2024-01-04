@@ -9,7 +9,7 @@ const getLocation = (): Promise<Location | null> => {
                     const locationData: Location = {
                         longitude: position.coords.longitude,
                         latitude: position.coords.latitude,
-                        time: position.timestamp,
+                        time: new Date().getTime(),
                     };
                     console.log(locationData);
                     resolve(locationData);
