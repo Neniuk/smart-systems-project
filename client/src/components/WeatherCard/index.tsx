@@ -21,20 +21,21 @@ class WeatherCard extends Component<WeatherCardProps> {
         // }
 
         // TODO: Could mby make a type for these?
-        const locationName: string = weatherData?.name;
+        const locationName: string = weatherData?.weather.name;
 
-        const weatherDescription: string = weatherData?.weather[0].description;
+        const weatherDescription: string =
+            weatherData?.weather.weather[0].description;
 
-        const tempKelvin: number = weatherData?.main.temp;
+        const tempKelvin: number = weatherData?.weather.main.temp;
         const tempCelsius: number = tempKelvin - 273.15;
 
-        const minTempKelvin: number = weatherData?.main.temp_min;
+        const minTempKelvin: number = weatherData?.weather.main.temp_min;
         const minTempCelsius: number = minTempKelvin - 273.15;
 
-        const maxTempKelvin: number = weatherData?.main.temp_max;
+        const maxTempKelvin: number = weatherData?.weather.main.temp_max;
         const maxTempCelsius: number = maxTempKelvin - 273.15;
 
-        const windSpeed: number = weatherData?.wind.speed;
+        const windSpeed: number = weatherData?.weather.wind.speed;
 
         // TODO: Make a button to refresh the weather data
         return (

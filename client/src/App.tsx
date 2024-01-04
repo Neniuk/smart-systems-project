@@ -5,11 +5,13 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
 import getWeather from "./api/getWeather";
+import getLocation from "./api/getLocation";
 import Location from "./models/Location";
 
 import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
+import { get } from "http";
 
 function App() {
     const [location, setLocation] = useState<Location | undefined>(undefined);
@@ -19,39 +21,31 @@ function App() {
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
 
     useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const locationData: Location = {
-                        longitude: position.coords.longitude,
-                        latitude: position.coords.latitude,
-                    };
-
-                    const timestamp = new Date().getTime();
-
-                    localStorage.setItem("location", JSON.stringify(location));
+        getLocation()
+            .then((locationData) => {
+                if (locationData) {
+                    console.log("Getting location");
                     setLocation(locationData);
-                    if (location) {
-                        getWeather(location).then((data) => {
-                            if (data) {
-                                setWeather({ weather: data, time: timestamp });
-
-                                localStorage.setItem(
-                                    "weather",
-                                    JSON.stringify(weather)
-                                );
-                            }
-                        });
-                    }
-                },
-                (error) => {
-                    console.error("Error retrieving geolocation data", error);
                 }
-            );
-        } else {
-            console.error("Geolocation is not supported by this browser");
-        }
+            })
+            .catch((error) => {
+                console.error("Failed to get location", error);
+            });
     }, []);
+
+    useEffect(() => {
+        if (location) {
+            console.log("Getting weather");
+            const timestamp = new Date().getTime();
+            getWeather(location).then((data) => {
+                if (data) {
+                    setWeather({ weather: data, time: timestamp });
+
+                    localStorage.setItem("weather", JSON.stringify(weather));
+                }
+            });
+        }
+    }, [location]);
 
     return (
         <Routes>
