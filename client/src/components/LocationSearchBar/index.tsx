@@ -10,6 +10,24 @@ const LocationSearchBar: React.FC = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+    const [currentLocation, setCurrentLocation] = useState('Lahti');
+    {/* the current location has to be changed to the location that the user's gps gives out*/}
+  const [searchedLocation, setSearchedLocation] = useState('');
+  const [recentLocations, setRecentLocations] = useState<string[]>([]);
+    {/* tried to keep track of the recently searched cities by keeping them in an array and just pushing new searches in but 
+  i can not really figure out how to write it properly without errors */ }
+  const LocationClick = (location: string) => {
+    setCurrentLocation(location);
+  };
+
+  const SearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchedLocation(event.target.value);
+  };
+
+  const SearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setCurrentLocation(searchedLocation);
+  };
 
     return (
         <div className="menu-container">
@@ -37,30 +55,36 @@ const LocationSearchBar: React.FC = () => {
                     </h1>
                 </div>
 
-                <div className="current-location">
-                    <span className="current-location-text">
-                        Current location:
-                    </span>
-                    <span className="current-locationLahti">Lahti</span>
-                </div>
+      <div className="current-location">
+        <span className="current-location-text">
+          Current location:
+        </span>
+        <span className="current-locationLahti">{currentLocation}</span>
+      </div>
 
-                <div className="search-section">
-                    <input type="text" placeholder="search location" />
-                </div>
+      <div className="search-section">
+        <form onSubmit={SearchSubmit}>
+          <input
+            type="text"
+            value={searchedLocation}
+            onChange={SearchInputChange}/>
+          <button type="submit">Search</button>
+        </form>
+      </div>
 
-                <div className="recent-locations">
-                    <span className="recent-locations-text">
-                        Recently searched:
-                    </span>
-                    <div className="location">Vantaa</div>
-                    <div className="location">Oulu</div>
-                    <div className="location">Lappeenranta</div>
-                    <div className="location">Hämeenlinna</div>
-                    <div className="location">Helsinki</div>
-                </div>
+      <div className="recent-locations">
+        <span className="recent-locations-text">
+          Recently searched:
+        </span>
+        <div className="location" onClick={() => LocationClick('Vantaa')}>Vantaa</div>
+        <div className="location" onClick={() => LocationClick('Oulu')}>Oulu</div>
+        <div className="location" onClick={() => LocationClick('Lappeenranta')}>Lappeenranta</div>
+        <div className="location" onClick={() => LocationClick('Hämeenlinna')}>Hämeenlinna</div>
+        <div className="location" onClick={() => LocationClick('Helsinki')}>Helsinki</div>
+      </div>
+      {/* the location will be changed now on click - either from the recently searched ones or from the searched on the spot ones when clicked on 'search' button */ }
 
                 {/*Forwards the user to the correct page when they click on the options
-        TO DO: Add the correct web pages in the href part when they are done
   */}
                 <div
                     className="menu-options"
