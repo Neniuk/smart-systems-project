@@ -16,20 +16,7 @@ type ClothesPageProps = {
 };
 
 const ClothesPage = (props: ClothesPageProps) => {
-    // const [celsius, setCelsius] = useState<{
-    //     minTempCelsius: number;
-    //     maxTempCelsius: number;
-    // } | null>(null);
-
-    // setCelsius({
-    //     minTempCelsius: 0,
-    //     maxTempCelsius: 0,
-    // });
-
-    // if (!celsius)
-    //     return <div className=" flex h-screen w-screen items-center"></div>;
-
-    console.log("CLOTHES PAGE PROPS:", props.weather?.weather);
+    // console.log("CLOTHES PAGE PROPS:", props.weather?.weather);
     const currentTempKelvin: number = props.weather?.weather.main.temp;
     const currentTempCelsius: number = currentTempKelvin - 273.15;
 
@@ -39,7 +26,7 @@ const ClothesPage = (props: ClothesPageProps) => {
     const maxTempKelvin: number = props.weather?.weather.main.temp_max;
     const maxTempCelsius: number = maxTempKelvin - 273.15;
 
-    console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius);
+    // console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius);
 
     return (
         <>
