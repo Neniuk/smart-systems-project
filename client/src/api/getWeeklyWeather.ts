@@ -5,7 +5,7 @@ const ADDRESS = "http://localhost:";
 const PORT = process.env.REACT_APP_SERVER_PORT || "5000";
 
 const getWeeklyWeather = async (location: Location) => {
-    // console.log("getWeather() called");
+    console.log("Fetching weekly forecast for location: ", location);
     const req: string = ADDRESS + PORT + "/weather/forecasts/weekly";
 
     try {

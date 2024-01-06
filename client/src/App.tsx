@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
 import getWeeklyWeather from "./api/getWeeklyWeather";
+import { get } from "http";
 
 // TODO: Cleanup the useEffects
 function App() {
@@ -45,6 +46,12 @@ function App() {
                     setWeather({ weather: data, time: timestamp });
 
                     localStorage.setItem("weather", JSON.stringify(weather));
+                }
+            });
+            getWeeklyWeather(location).then((data) => {
+                if (data) {
+                    console.log("Forecast data:");
+                    console.log(data);
                 }
             });
         }
@@ -97,19 +104,6 @@ function App() {
 
         return () => clearInterval(interval); // Clean up on component unmount
     }, [location, weather]);
-
-    // Fetch forecast data test
-    // TODO: Remove later
-    // useEffect(() => {
-    //     if (location) {
-    //         getWeeklyWeather(location).then((data) => {
-    //             if (data) {
-    //                 console.log("Forecast data:");
-    //                 console.log(data);
-    //             }
-    //         });
-    //     }
-    // }, [location]);
 
     return (
         <Routes>

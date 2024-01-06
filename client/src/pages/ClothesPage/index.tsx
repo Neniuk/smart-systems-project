@@ -50,18 +50,14 @@ const ClothesPage = (props: ClothesPageProps) => {
                     <div className="flex flex-1 flex-col">
                         <div className="p-4">
                             <HatCard
-                                // maxTempCelsius={celsius.maxTempCelsius}
-                                // minTempCelsius={celsius.minTempCelsius}
-                                maxTempCelsius={0}
-                                minTempCelsius={0}
+                                maxTempCelsius={maxTempCelsius}
+                                minTempCelsius={minTempCelsius}
                             />
                         </div>
                         <div className="flex-1 p-4">
                             <UpperBodyCard
-                                // maxTempCelsius={celsius.maxTempCelsius}
-                                // minTempCelsius={celsius.minTempCelsius}
-                                maxTempCelsius={0}
-                                minTempCelsius={0}
+                                maxTempCelsius={maxTempCelsius}
+                                minTempCelsius={minTempCelsius}
                             />
                         </div>
                     </div>
@@ -69,19 +65,15 @@ const ClothesPage = (props: ClothesPageProps) => {
                         <div className="flex-4  p-4">
                             <div className="flex-1 ">
                                 <LowerBodyCard
-                                    // maxTempCelsius={celsius.maxTempCelsius}
-                                    // minTempCelsius={celsius.minTempCelsius}
-                                    maxTempCelsius={0}
-                                    minTempCelsius={0}
+                                    maxTempCelsius={maxTempCelsius}
+                                    minTempCelsius={minTempCelsius}
                                 />
                             </div>
                         </div>
                         <div className="p-4">
                             <FootCard
-                                // maxTempCelsius={celsius.maxTempCelsius}
-                                // minTempCelsius={celsius.minTempCelsius}
-                                maxTempCelsius={0}
-                                minTempCelsius={0}
+                                maxTempCelsius={maxTempCelsius}
+                                minTempCelsius={minTempCelsius}
                             />
                         </div>
                     </div>
