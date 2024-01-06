@@ -38,9 +38,6 @@ function App() {
             });
     }, []);
 
-    // Gets weather data when location data is fetched
-    // TODO: Update useEffect to also fetch forecast data and
-    // update the Weather.ts type to include forecast data
     useEffect(() => {
         if (location) {
             const timestamp = new Date().getTime();
@@ -65,15 +62,16 @@ function App() {
 
     // Updates weather and location data every hour, or if it's not yet fetched
     // Checked every minute
-    // TODO: Update useEffect to also fetch forecast data
     useEffect(() => {
         const interval = setInterval(
             () => {
                 const currentTime = new Date().getTime();
                 if (
                     !weather ||
+                    !forecast ||
                     !location ||
                     currentTime - weather.time > 3600000 ||
+                    currentTime - forecast.time > 3600000 ||
                     currentTime - location.time > 3600000
 
                     // Ten second interval for testing
@@ -81,7 +79,9 @@ function App() {
                     // currentTime - location.time > 10000
                 ) {
                     // If the weather or location data is over an hour old, or not yet fetched, refetch both
-                    console.log("Refetching weather and location data");
+                    console.log(
+                        "Refetching weather, forecast and location data"
+                    );
                     getLocation()
                         .then((locationData) => {
                             if (locationData) {
@@ -93,6 +93,21 @@ function App() {
                                             weather: weatherData,
                                             time: currentTime,
                                         });
+                                    }
+                                });
+
+                                getHourlyWeather(locationData).then((data) => {
+                                    if (data) {
+                                        setForecast({
+                                            forecast: data,
+                                            time: currentTime,
+                                        });
+
+                                        localStorage.setItem(
+                                            "forecast",
+                                            JSON.stringify(forecast)
+                                        );
+                                        // console.log("Forecast data:", data);
                                     }
                                 });
                             }

@@ -11,7 +11,7 @@ const getLocation = (): Promise<Location | null> => {
                         latitude: position.coords.latitude,
                         time: new Date().getTime(),
                     };
-                    console.log(locationData);
+                    // console.log(locationData);
                     resolve(locationData);
                 },
                 (error: GeolocationPositionError) => {

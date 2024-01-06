@@ -19,6 +19,7 @@ router.post("/", (req: Request, res: Response, next: NextFunction) => {
     try {
         const response: Promise<any> = axios.get(url);
         response.then((response) => {
+            // console.log("Current weather: ", response.data);
             res.status(200).json(response.data);
         });
     } catch (error) {
@@ -29,7 +30,6 @@ router.post("/", (req: Request, res: Response, next: NextFunction) => {
 router.post(
     "/forecasts/hourly",
     (req: Request, res: Response, next: NextFunction) => {
-        console.log("getHourlyWeather() called");
         const location: Location = req.body.location;
         const OPENWEATHER_API_KEY: string =
             process.env.OPENWEATHER_API_KEY || "";
@@ -45,7 +45,7 @@ router.post(
             const response: Promise<any> = axios.get(url);
             response
                 .then((response) => {
-                    console.log("Hourly forecast: ", response.data);
+                    // console.log("Hourly forecast: ", response.data);
                     res.status(200).json(response.data);
                 })
                 .catch((error) => {

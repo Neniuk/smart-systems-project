@@ -5,7 +5,7 @@ const ADDRESS = "http://localhost:";
 const PORT = process.env.REACT_APP_SERVER_PORT || "5000";
 
 const getHourlyWeather = async (location: Location) => {
-    console.log("getWeather() called");
+    console.log("Fetching forecast data for location:", location);
     const req: string = ADDRESS + PORT + "/weather/forecasts/hourly";
 
     try {
@@ -19,7 +19,7 @@ const getHourlyWeather = async (location: Location) => {
         // console.log("Response: ", res);
 
         const data: object = await res.json();
-        // console.log("Hourly forecast: ", data);
+        console.log("Hourly forecast: ", data);
 
         return data;
     } catch (err: any) {

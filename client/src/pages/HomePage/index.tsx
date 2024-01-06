@@ -15,10 +15,9 @@ type HomePageProps = {
     location?: Location;
 };
 
-// TODO: Add forecast prop and add forecast to App.tsx
 const HomePage = (props: HomePageProps) => {
-    console.log("HOME PAGE PROPS:", props);
-    console.log("HOME PAGE FORECAST:", props.forecast);
+    // console.log("HOME PAGE PROPS:", props);
+    // console.log("HOME PAGE FORECAST:", props.forecast);
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
     return (
         <div className="from-backgroundPrimary to-backgroundSecondary min-h-screen bg-gradient-to-b">

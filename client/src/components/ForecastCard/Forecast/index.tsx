@@ -1,5 +1,5 @@
 const IndividualForecast = (props: any) => {
-    console.log("INDIVIDUAL FORECAST:", props);
+    // console.log("INDIVIDUAL FORECAST:", props);
 
     const minTempKelvin: number = props.main.temp_min;
     const minTempCelsius: number = minTempKelvin - 273.15;
@@ -32,10 +32,10 @@ type ForecastProps = {
 const Forecast = (props: ForecastProps) => {
     // console.log("FORECAST PROPS:", props.forecast);
     return (
-        <ul className="mx-4 my-4 flex flex-col gap-4">
+        <ul className="mx-4 mb-4 mt-8 flex flex-col gap-4">
             {props.forecast &&
-                props.forecast.list.map((forecast: any) => (
-                    <IndividualForecast {...forecast} />
+                props.forecast.list.map((forecast: any, index: number) => (
+                    <IndividualForecast key={index} {...forecast} />
                 ))}
         </ul>
     );
