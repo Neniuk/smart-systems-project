@@ -21,7 +21,7 @@ const FootCard: React.FC<FootCardProps> = (props) => {
         }else if(minTempCelsius>10&&maxTempCelsius<=30){
             setSelectedItems(['Shortsocks','Shoes'])
         }else if(minTempCelsius>-10&&maxTempCelsius<=10){
-            setSelectedItems(['Thicksoks'])
+            setSelectedItems(['Thicksoks','Shoes'])
         }else if(minTempCelsius>-20&&maxTempCelsius<=-10){
             setSelectedItems(['Shortsocks','Wintershoes'])
         }else if(minTempCelsius<-20){
