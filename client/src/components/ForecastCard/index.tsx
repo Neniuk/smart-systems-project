@@ -1,25 +1,7 @@
 import React, { Component } from "react";
 
-const ForecastTopBar = ({ selectedForecast }: { selectedForecast: string }) => {
-    return (
-        <div className="flex flex-row gap-56">
-            <h1 className={selectedForecast === "weekly" ? "underline" : ""}>
-                Weekly Forecast
-            </h1>
-            <h1 className={selectedForecast === "hourly" ? "underline" : ""}>
-                Hourly Forecast
-            </h1>
-        </div>
-    );
-};
-
-const Forecast = () => {
-    return (
-        <div>
-            <h1>Forecast</h1>
-        </div>
-    );
-};
+import Forecast from "./Forecast";
+import ForecastTopBar from "./TopBar";
 
 type ForecastCardProps = {
     selectedForecast: string;

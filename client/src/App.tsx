@@ -11,7 +11,7 @@ import Location from "./models/Location";
 import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
-import getWeeklyWeather from "./api/getWeeklyWeather";
+import getHourlyWeather from "./api/getHourlyWeather";
 import { get } from "http";
 
 // TODO: Cleanup the useEffects
@@ -48,10 +48,9 @@ function App() {
                     localStorage.setItem("weather", JSON.stringify(weather));
                 }
             });
-            getWeeklyWeather(location).then((data) => {
+            getHourlyWeather(location).then((data) => {
                 if (data) {
-                    console.log("Forecast data:");
-                    console.log(data);
+                    console.log("Forecast data:", data);
                 }
             });
         }
