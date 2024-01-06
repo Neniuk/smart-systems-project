@@ -37,9 +37,9 @@ class WeatherCard extends Component<WeatherCardProps> {
 
         // TODO: Make a button to refresh the weather data
         return (
-            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary flex flex-row justify-between rounded-2xl bg-gradient-to-l p-4">
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-                <div className="text-left">
+            <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary relative flex flex-row justify-between overflow-hidden rounded-2xl bg-gradient-to-l p-4">
+                <div className="absolute inset-0 bg-black opacity-5"></div>
+                <div className="z-10 text-left">
                     <h1 className="text-3xl">{locationName || "Loading..."}</h1>
                     <h2 className="text-textLightSecondary">
                         {weatherDescription || "Loading..."}
@@ -52,7 +52,7 @@ class WeatherCard extends Component<WeatherCardProps> {
                             : "Loading..."}
                     </h2>
                 </div>
-                <div className="text-right">
+                <div className="z-10 text-right">
                     <h1 className="text-4xl">
                         {tempCelsius
                             ? `${Math.round(tempCelsius)}°C`

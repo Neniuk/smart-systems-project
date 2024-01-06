@@ -11,8 +11,8 @@ type WeatherCard = {
 };
 
 type ClothesPageProps = {
+    weather?: any;
     location?: Location;
-    weatherData?: object;
 };
 
 const ClothesPage = (props: ClothesPageProps) => {
@@ -29,11 +29,24 @@ const ClothesPage = (props: ClothesPageProps) => {
     // if (!celsius)
     //     return <div className=" flex h-screen w-screen items-center"></div>;
 
+    console.log("CLOTHES PAGE PROPS:", props.weather.weather);
+    const currentTempKelvin: number = props.weather.weather.main.temp;
+    const currentTempCelsius: number = currentTempKelvin - 273.15;
+
+    const minTempKelvin: number = props.weather.weather.main.temp_min;
+    const minTempCelsius: number = minTempKelvin - 273.15;
+
+    const maxTempKelvin: number = props.weather.weather.main.temp_max;
+    const maxTempCelsius: number = maxTempKelvin - 273.15;
+
+    console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius);
+
     return (
         <>
             <div className=" flex h-screen w-screen items-center">
-                <LocationSearchBar /> {/* Inserted LocationSearchBar component */}
-                <div className="mx-auto my-auto flex w-4/5 rounded-md bg-white flex-wrap">
+                <LocationSearchBar />{" "}
+                {/* Inserted LocationSearchBar component */}
+                <div className="mx-auto my-auto flex w-4/5 flex-wrap rounded-md bg-white">
                     <div className="flex flex-1 flex-col">
                         <div className="p-4">
                             <HatCard
