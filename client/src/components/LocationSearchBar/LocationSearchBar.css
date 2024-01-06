@@ -20,22 +20,22 @@
 
   cursor: pointer;
   z-index: 1100;
-  transition:  0.8s ease; 
+  transition:  0.8s ease;
 
-  
+
 }
 
 .hamburger-icon::before {
-  content: ''; 
+  content: '';
   position: absolute;
   top: 70%;
   left: 57.5%;
-  transform: translate(-50%, -50%); 
-  width: 40px; 
-  height: 40px; 
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
   background-color: white;
-  border-radius: 50%; 
-  z-index: -1; 
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .bar1, .bar2, .bar3 {
@@ -44,16 +44,16 @@
   background-color: #333;
   margin: 6px 0;
   transition: 0.4s;
-  
+
 
 }
 
 .hamburger-closed .bar1 {
   position: absolute;
-  left: -10px;
-  bottom: 0px;
+  left: -4px;
+  bottom: 5px;
   margin: 6px 8px;
-  transform: rotate(90deg);
+
 }
 
 .hamburger-closed .bar2 {
@@ -61,15 +61,15 @@
   left: 0px;
   bottom: 0px;
   margin: 6px 4px;
-  transform: rotate(90deg);
+
 }
 
 .hamburger-closed .bar3 {
   position: absolute;
-  left: 10px;
-  bottom: 0px;
+  left: 4px;
+  bottom: -5px;
   margin: 6px 0px;
-  transform: rotate(90deg);
+
 }
 
 /* Rotate first bar */
@@ -106,16 +106,16 @@
 }
 
 .weather-planner-title {
-  font-size: 30px; 
+  font-size: 30px;
   font-weight: bold;
   color: black;
-  
+
 }
 
 
 .arrow-icon {
   display: inline-block;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .menu-content {
@@ -138,7 +138,9 @@
 
 .search-section {
   position:relative;
-  background-color: rgb(0, 187, 255);
+  border-width: 2px;
+  border-color: rgb(54, 171, 255);
+  background-color: rgb(173, 224, 243);
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -149,7 +151,7 @@
 .search-section input {
   position: relative;
   right: -10px;
-  background-color: rgb(0, 187, 255);
+  background-color: rgb(173, 224, 243);
   text-align: center;
   border: none;
   outline: none;
@@ -171,16 +173,16 @@
 }
 
 .current-location {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   width: 100%;
   color: black;
-  
+
 }
 
 .current-location-text, .current-location-city {
-  margin-right: 5px; 
+  margin-right: 5px;
   text-align: center;
   color: #0c78b3;
   font-size: 130%;
@@ -207,21 +209,22 @@
 
 
 .location:hover {
-  background-color: white; 
-  border-radius: 10px; 
-  transform: scale(1.15); 
-  text-align: center;
+  font-weight: 700;
+  color:rgb(22,0,156);
+  /*background-color: white;
+  border-radius: 10px;
+  transform: scale(1.15);
+  text-align: center;*/
 }
 
 
 .menu-options {
-  font-weight: bold; 
-  display: block; 
-  margin: 10px 0; 
-  text-transform: uppercase; 
+  font-weight: bold;
+  display: block;
+  margin: 10px 0;
+  text-transform: uppercase;
   color: black;
 }
-
 
 
 

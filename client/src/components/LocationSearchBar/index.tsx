@@ -49,8 +49,6 @@ const LocationSearchBar: React.FC = () => {
             >
                 <div className="title-container">
                     <h1 className="weather-planner-title">
-                        <span className="arrow-icon">&#8592;</span>{" "}
-                        {/* This is the arrow icon */}
                         Weather Planner
                     </h1>
                 </div>
