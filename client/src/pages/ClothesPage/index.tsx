@@ -29,14 +29,14 @@ const ClothesPage = (props: ClothesPageProps) => {
     // if (!celsius)
     //     return <div className=" flex h-screen w-screen items-center"></div>;
 
-    console.log("CLOTHES PAGE PROPS:", props.weather.weather);
-    const currentTempKelvin: number = props.weather.weather.main.temp;
+    console.log("CLOTHES PAGE PROPS:", props.weather?.weather);
+    const currentTempKelvin: number = props.weather?.weather.main.temp;
     const currentTempCelsius: number = currentTempKelvin - 273.15;
 
-    const minTempKelvin: number = props.weather.weather.main.temp_min;
+    const minTempKelvin: number = props.weather?.weather.main.temp_min;
     const minTempCelsius: number = minTempKelvin - 273.15;
 
-    const maxTempKelvin: number = props.weather.weather.main.temp_max;
+    const maxTempKelvin: number = props.weather?.weather.main.temp_max;
     const maxTempCelsius: number = maxTempKelvin - 273.15;
 
     console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius);
