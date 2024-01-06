@@ -20,6 +20,9 @@ function App() {
     const [weather, setWeather] = useState<
         { weather: object; time: number } | undefined
     >(undefined);
+    const [forecast, setForecast] = useState<
+        { forecast: object; time: number } | undefined
+    >(undefined);
     const [selectedForecast, setSelectedForecast] = useState<string>("weekly");
 
     // Gets location data on first render
@@ -46,11 +49,15 @@ function App() {
                     setWeather({ weather: data, time: timestamp });
 
                     localStorage.setItem("weather", JSON.stringify(weather));
+                    // console.log("Weather data:", data);
                 }
             });
             getHourlyWeather(location).then((data) => {
                 if (data) {
-                    console.log("Forecast data:", data);
+                    setForecast({ forecast: data, time: timestamp });
+
+                    localStorage.setItem("forecast", JSON.stringify(forecast));
+                    // console.log("Forecast data:", data);
                 }
             });
         }
@@ -58,6 +65,7 @@ function App() {
 
     // Updates weather and location data every hour, or if it's not yet fetched
     // Checked every minute
+    // TODO: Update useEffect to also fetch forecast data
     useEffect(() => {
         const interval = setInterval(
             () => {
@@ -106,7 +114,10 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<HomePage {...{ location, weather }} />} />
+            <Route
+                path="/"
+                element={<HomePage {...{ location, weather, forecast }} />}
+            />
             <Route path="/activities" element={<h1>Activities</h1>} />
             <Route
                 path="/clothes"
