@@ -11,14 +11,12 @@ const IndividualForecast = (props: any) => {
 
     return (
         <li>
-            <div className="flex flex-row justify-between">
-                <div>
-                    <div>{props.dt_txt.slice(-8, -3)}</div>
+            <div className="flex flex-row justify-between items-center">
+                <div className="flex flex-row gap-8">  {/* Increased gap size here */}
+                    <div className="font-medium">{props.dt_txt.slice(-8, -3)}</div>
+                    <div className="text-left">{weatherDescription}</div>
                 </div>
-                <div className="items-start justify-start">
-                    {weatherDescription}
-                </div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row gap-4 items-center">
                     <div>{Math.round(minTempCelsius)}°C</div>
                     <div>/</div>
                     <div>{Math.round(maxTempCelsius)}°C</div>
@@ -27,7 +25,6 @@ const IndividualForecast = (props: any) => {
         </li>
     );
 };
-
 type ForecastProps = {
     forecast?: any;
 };
