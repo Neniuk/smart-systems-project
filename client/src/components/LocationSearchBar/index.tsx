@@ -1,9 +1,10 @@
 // LocationSearchBarCard.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./LocationSearchBar.css";
 import Location from "../../models/Location";
+import getCity from "../../api/getCity";
 
 type LocationSearchBarProps = {
     location?: Location;
