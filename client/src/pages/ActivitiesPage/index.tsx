@@ -9,6 +9,8 @@ import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 
+import CarouselCard from "../../components/CarouselCard";
+
 type ActivitiesPageProps = {
     weather?: object;
     forecast?: object;
@@ -17,8 +19,10 @@ type ActivitiesPageProps = {
 
 const ActivitiesPage = (props: ActivitiesPageProps) => {
     return (
-        <div className="from-backgroundPrimary to-backgroundSecondary min-h-screen bg-gradient-to-b">
-            <div className="content text-textLight flex flex-col items-center justify-center gap-8 pt-16"></div>
+        <div>
+            <div>
+                <CarouselCard />
+            </div>
         </div>
     );
 };
