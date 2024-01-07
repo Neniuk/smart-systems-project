@@ -27,6 +27,7 @@ module.exports = {
                 textLightTertiary: "var(--text-light-tertiary)",
                 textDark: "var(--text-dark)",
                 textDarkSecondary: "var(--text-dark-secondary)",
+                textAccent: "var(--text-accent)",
                 backgroundPrimary: "var(--background-primary)",
                 backgroundSecondary: "var(--background-secondary)",
                 mainCardPrimary: "var(--main-card-primary)",
