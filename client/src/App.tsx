@@ -9,6 +9,7 @@ import getLocation from "./api/getLocation";
 import Location from "./models/Location";
 
 import HomePage from "./pages/HomePage";
+import ActivitiesPage from "./pages/ActivitiesPage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
 import getHourlyWeather from "./api/getHourlyWeather";
@@ -136,7 +137,12 @@ function App() {
                     path="/"
                     element={<HomePage {...{ location, weather, forecast }} />}
                 />
-                <Route path="/activities" element={<h1>Activities</h1>} />
+                <Route
+                    path="/activities"
+                    element={
+                        <ActivitiesPage {...{ location, weather, forecast }} />
+                    }
+                />
                 <Route
                     path="/clothes"
                     element={<ClothesPage {...{ location, weather }} />}
