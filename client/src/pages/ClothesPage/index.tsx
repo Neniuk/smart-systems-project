@@ -31,8 +31,7 @@ const ClothesPage = (props: ClothesPageProps) => {
     return (
         <>
             <div className=" flex h-screen w-screen items-center">
-                <LocationSearchBar />{" "}
-                {/* Inserted LocationSearchBar component */}
+                {/* <LocationSearchBar /> */}
                 <div className="mx-auto my-auto flex w-4/5 flex-wrap rounded-md bg-white">
                     <div className="flex flex-1 flex-col">
                         <div className="p-4">

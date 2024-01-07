@@ -12,7 +12,8 @@ import HomePage from "./pages/HomePage";
 import ClothesPage from "./pages/ClothesPage";
 import PageNotFoundPage from "./pages/PageNotFoundPage";
 import getHourlyWeather from "./api/getHourlyWeather";
-import { get } from "http";
+
+import LocationSearchBar from "./components/LocationSearchBar";
 
 // TODO: Cleanup the useEffects
 function App() {
@@ -128,18 +129,21 @@ function App() {
     }, [location, weather]);
 
     return (
-        <Routes>
-            <Route
-                path="/"
-                element={<HomePage {...{ location, weather, forecast }} />}
-            />
-            <Route path="/activities" element={<h1>Activities</h1>} />
-            <Route
-                path="/clothes"
-                element={<ClothesPage {...{ location, weather }} />}
-            />
-            <Route path="*" element={<PageNotFoundPage />} />
-        </Routes>
+        <>
+            <LocationSearchBar />
+            <Routes>
+                <Route
+                    path="/"
+                    element={<HomePage {...{ location, weather, forecast }} />}
+                />
+                <Route path="/activities" element={<h1>Activities</h1>} />
+                <Route
+                    path="/clothes"
+                    element={<ClothesPage {...{ location, weather }} />}
+                />
+                <Route path="*" element={<PageNotFoundPage />} />
+            </Routes>
+        </>
     );
 }
 
