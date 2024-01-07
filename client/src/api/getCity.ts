@@ -18,10 +18,17 @@ const getCity = async (location: Location) => {
         });
         // console.log("Response: ", res);
 
-        const data: object = await res.json();
-        console.log("City name: ", data);
+        const data: any = await res.json();
 
-        return data;
+        try {
+            const cityName: string = data[0].name;
+            cityName.replace('"', "");
+            // console.log("City name: ", cityName);
+
+            return cityName;
+        } catch (err: any) {
+            console.log("Error: ", err);
+        }
     } catch (err: any) {
         console.log("Error: ", err);
     }

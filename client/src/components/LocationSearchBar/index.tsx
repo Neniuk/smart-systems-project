@@ -1,35 +1,44 @@
-// LocationSearchBarCard.tsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./LocationSearchBar.css";
 import Location from "../../models/Location";
 import getCity from "../../api/getCity";
+import getCoordinates from "../../api/getCoordinates";
 
 type LocationSearchBarProps = {
     location?: Location;
     setLocation: (location: Location) => void;
 };
 
-const LocationSearchBar: React.FC<LocationSearchBarProps> = () => {
+const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
+    location,
+    setLocation,
+}) => {
+    const [currentLocation, setCurrentLocation] = useState("");
+    const [searchedLocation, setSearchedLocation] = useState("");
+    const [recentLocations, setRecentLocations] = useState<string[]>([]);
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (location) {
+            getCity(location).then((data) => {
+                if (data) {
+                    // console.log("Searchbar City", data);
+                    setCurrentLocation(data);
+                }
+            });
+        }
+    }, [location]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-    const [currentLocation, setCurrentLocation] = useState("Lahti");
-    {
-        /* the current location has to be changed to the location that the user's gps gives out*/
-    }
-    const [searchedLocation, setSearchedLocation] = useState("");
-    const [recentLocations, setRecentLocations] = useState<string[]>([]);
+
     {
         /* tried to keep track of the recently searched cities by keeping them in an array and just pushing new searches in but 
   i can not really figure out how to write it properly without errors */
     }
-    const LocationClick = (location: string) => {
-        setCurrentLocation(location);
-    };
 
     const SearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchedLocation(event.target.value);
@@ -38,6 +47,15 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = () => {
     const SearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setCurrentLocation(searchedLocation);
+    };
+
+    const handleLocationChange = (city: string) => {
+        getCoordinates(city).then((data) => {
+            if (data) {
+                // console.log("LocationSearchBar", data);
+                setLocation(data);
+            }
+        });
     };
 
     return (
@@ -88,39 +106,35 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = () => {
                     </span>
                     <div
                         className="location"
-                        onClick={() => LocationClick("Vantaa")}
+                        onClick={() => handleLocationChange("Vantaa")}
                     >
                         Vantaa
                     </div>
                     <div
                         className="location"
-                        onClick={() => LocationClick("Oulu")}
+                        onClick={() => handleLocationChange("Oulu")}
                     >
                         Oulu
                     </div>
                     <div
                         className="location"
-                        onClick={() => LocationClick("Lappeenranta")}
+                        onClick={() => handleLocationChange("Lappeenranta")}
                     >
                         Lappeenranta
                     </div>
                     <div
                         className="location"
-                        onClick={() => LocationClick("Hämeenlinna")}
+                        onClick={() => handleLocationChange("Hämeenlinna")}
                     >
                         Hämeenlinna
                     </div>
                     <div
                         className="location"
-                        onClick={() => LocationClick("Helsinki")}
+                        onClick={() => handleLocationChange("Helsinki")}
                     >
                         Helsinki
                     </div>
                 </div>
-                {/* the location will be changed now on click - either from the recently searched ones or from the searched on the spot ones when clicked on 'search' button */}
-
-                {/*Forwards the user to the correct page when they click on the options
-                 */}
                 <div
                     className="menu-options"
                     style={{ display: "flex", flexDirection: "column" }}

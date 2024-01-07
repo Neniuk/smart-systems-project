@@ -6,6 +6,7 @@ class ExploreCard extends Component<ExploreCardProps> {
     render() {
         return (
             <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary relative flex flex-row justify-between overflow-hidden rounded-2xl bg-gradient-to-l p-4">
+                {" "}
                 <div className="absolute inset-0 bg-black opacity-5"></div>
                 <div className="ml-2 flex items-center">
                     {/* <img src="" alt="Location Marker Icon"></img> */}
