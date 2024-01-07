@@ -130,7 +130,7 @@ function App() {
 
     return (
         <>
-            <LocationSearchBar />
+            <LocationSearchBar {...{ location, setLocation }} />
             <Routes>
                 <Route
                     path="/"
