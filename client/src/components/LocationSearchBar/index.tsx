@@ -11,6 +11,8 @@ type LocationSearchBarProps = {
     setLocation: (location: Location) => void;
 };
 
+// TODO: Update searchbar to make it functional
+// TODO: Update page navigation styling and add hover effects
 const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
     location,
     setLocation,
