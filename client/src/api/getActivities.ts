@@ -8,13 +8,35 @@ const getActivities = async (city: string, weather: any) => {
     console.log("Fetching activities for city:", city);
     const req: string = ADDRESS + PORT + "/activities";
 
+    // console.log(weather);
+    const weatherDescription: string = weather.weather.weather[0].main;
+
+    const tempKelvin: number = weather.weather.main.temp;
+    const tempCelsius: number = tempKelvin - 273.15;
+
+    const minTempKelvin: number = weather.weather.main.temp_min;
+    const minTempCelsius: number = minTempKelvin - 273.15;
+
+    const maxTempKelvin: number = weather.weather.main.temp_max;
+    const maxTempCelsius: number = maxTempKelvin - 273.15;
+
+    const windSpeed: number = weather.weather.wind.speed;
+
+    const weatherPrompt: any = {
+        temperature: tempCelsius,
+        minTemperature: minTempCelsius,
+        maxTemperature: maxTempCelsius,
+        weather: weatherDescription,
+        wind: windSpeed,
+    };
+
     try {
         const res: Response = await fetch(req, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ city: city, weather: weather }),
+            body: JSON.stringify({ city: city, weather: weatherPrompt }),
         });
         // console.log("Response: ", res);
 

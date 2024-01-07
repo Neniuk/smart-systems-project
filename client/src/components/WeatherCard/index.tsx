@@ -17,8 +17,7 @@ class WeatherCard extends Component<WeatherCardProps> {
         // TODO: Could mby make a type for these?
         const locationName: string = weatherData?.weather.name;
 
-        const weatherDescription: string =
-            weatherData?.weather.weather[0].description;
+        const weatherDescription: string = weatherData?.weather.weather[0].main;
 
         const tempKelvin: number = weatherData?.weather.main.temp;
         const tempCelsius: number = tempKelvin - 273.15;

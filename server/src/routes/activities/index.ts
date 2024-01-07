@@ -20,10 +20,12 @@ type openAICompletionProps = {
 
 // Reference: https://platform.openai.com/docs/quickstart?context=node
 const openAICompletion = async (props: openAICompletionProps) => {
+    console.log(props.weather);
+
     const prompt: string =
         `You are to suggest activities to do in the location provided according to the also provided weather conditions in the JSON format data of the current weather at the location. The suggestions should be in the form of a list. Limit the length of the response to minimize the amount of spent tokens\n\n` +
         `* Location: \n${props.city}\n\n` +
-        `* Current weather: \n${props.weather}\n\n` +
+        `* Current weather: \nTemperature: ${props.weather.temperature}C, Minimum temperature: ${props.weather.minTemperature}C, Maximum temperature: ${props.weather.maxTemperature}C, Conditions: ${props.weather.weather}, Wind: ${props.weather.wind}m/s\n\n` +
         `* Activity suggestions example (Not suggestion of format): \nFor example, if the current weather is sunny and warm, a good activity might be to visit a local park or beach.`;
 
     const promptStatic: string =
@@ -32,10 +34,10 @@ const openAICompletion = async (props: openAICompletionProps) => {
         `* Current weather: \nTemperature: 3C, Conditions: Rainy, Wind: 3m/s\n\n` +
         `* Activity suggestions example (Not suggestion of format): \nFor example, if the current weather is sunny and warm, a good activity might be to visit a local park or beach.`;
 
-    // console.log(promptStatic);
+    // console.log(prompt);
 
     const completion = await openai.chat.completions.create({
-        messages: [{ role: "system", content: promptStatic }],
+        messages: [{ role: "system", content: prompt }],
         model: "gpt-3.5-turbo",
         max_tokens: 2048,
         temperature: 0.9,
@@ -43,6 +45,7 @@ const openAICompletion = async (props: openAICompletionProps) => {
 
     // console.log(completion);
     // console.log(completion.choices[0]);
+
     try {
         if (completion.choices[0].message.content) {
             const suggestedActivities: string =
@@ -55,6 +58,7 @@ const openAICompletion = async (props: openAICompletionProps) => {
 };
 
 router.post("/", (req: Request, res: Response, next: NextFunction) => {
+    // console.log(req.body.weather);
     const promptObject: openAICompletionProps = {
         city: req.body.city,
         weather: req.body.weather,
