@@ -20,7 +20,7 @@ type openAICompletionProps = {
 
 // Reference: https://platform.openai.com/docs/quickstart?context=node
 const openAICompletion = async (props: openAICompletionProps) => {
-    console.log(props.weather);
+    // console.log(props.weather);
 
     const prompt: string =
         `You are to suggest activities to do in the location provided according to the also provided weather conditions in the JSON format data of the current weather at the location. The suggestions should be in the form of a list. Limit the length of the response to minimize the amount of spent tokens\n\n` +

@@ -54,14 +54,14 @@ const PromptActivitiesCard = (props: PromptActivitiesCardProps) => {
     return (
         <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer text-textDark from-secondaryCardPrimary to-secondaryCardSecondary relative flex flex-col justify-center gap-4 overflow-hidden rounded-2xl border-2 border-blue-400 bg-gradient-to-l p-4">
             <div
-                className="z-10 m-auto cursor-pointer text-center text-xl font-bold text-blue-500"
+                className="m-auto mt-2 cursor-pointer items-center justify-center text-center text-xl font-bold text-blue-500"
                 onClick={
                     dataAvailable ? handleGetSuggestedActivities : undefined
                 }
             >
                 Get Suggested Activities
             </div>
-            <div className="z-10">{suggestedActivities}</div>
+            <div>{suggestedActivities}</div>
         </div>
     );
 };
