@@ -24,7 +24,7 @@ const ActivitiesPage = (props: ActivitiesPageProps) => {
 
     const maxTempKelvin: number = props.weather?.weather.main.temp_max;
     const maxTempCelsius: number = maxTempKelvin - 273.15;
-    console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius)
+    //console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius)
     return (
         <div className="activities-container mt-5">
             <div className="carousel mt-5">

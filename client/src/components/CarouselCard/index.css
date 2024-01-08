@@ -1,17 +1,17 @@
 
   .card-container {
-    height: 45vh; /* 20% of the viewport height */
-    width: 80vw; /* 60% of the viewport width */
+    height: 45vh; 
+    width: 80vw; 
     margin: 0 auto;
     border: 2px solid white;
     background-color: white;
-    overflow: hidden; /* Ensure the border is visible even if the carousel overflows */
+    overflow: hidden;
     padding-left: 3vw;
     padding-bottom:3vh;
   }
   .card {
-    height: 50vh; /* 20% of the viewport height */
-    width: 37vh; /* 60% of the viewport width */
+    height: 50vh; 
+    width: 37vh; 
     margin: 0 auto;
   }
   .Activities {
