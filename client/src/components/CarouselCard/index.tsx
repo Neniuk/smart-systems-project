@@ -9,14 +9,11 @@ import "./index.css";
 import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
 import LocationSearchBar from "../../components/LocationSearchBar";
-type WeatherCard = {
-    weatherData?: any;
-};
+
 
 type CarouselCardProps = {
-    weather?: any;
-    location?: Location;
-    activitySet?: any;
+  minTempCelsius: number;
+  maxTempCelsius: number;
 };
 
 const responsive = {
@@ -40,6 +37,7 @@ const responsive = {
 };
 
 const CarouselCard = (props: CarouselCardProps) => {
+<<<<<<< Updated upstream
     console.log("CAROUSEL PROPS:", props.weather);
     const currentTempKelvin: number = props.weather?.weather.main.temp;
     const currentTempCelsius: number = currentTempKelvin - 273.15;
@@ -77,6 +75,27 @@ const CarouselCard = (props: CarouselCardProps) => {
                 }
             </div>
         </>
+=======
+
+
+    return (
+        <>
+        <div className="card-container rounded-md bg-white">
+        <h2 className="Activities"> Activities</h2>
+        {<Carousel responsive={responsive}>
+        {(getActivity(props.minTempCelsius, props.maxTempCelsius)).map(({ image, text }, index) => (
+        <React.Fragment key={index}>
+          <div className="card" key={index}>
+            <img width={200} height={150} className="product--image rounded-md" src={image} alt={text} />
+            <p className="title">{text}</p>
+          </div>
+          </React.Fragment>
+        ))}
+      </Carousel>}
+      </div>
+      </>
+
+>>>>>>> Stashed changes
     );
 };
 
