@@ -36,7 +36,6 @@ const responsive = {
 };
 
 const CarouselCard = (props: CarouselCardProps) => {
-<<<<<<< Updated upstream
     return (
         <>
             <div className="card-container rounded-md bg-white">
@@ -64,27 +63,6 @@ const CarouselCard = (props: CarouselCardProps) => {
                 }
             </div>
         </>
-=======
-
-
-    return (
-        <>
-        <div className="card-container rounded-md bg-white">
-        <h2 className="Activities"> Activities</h2>
-        {<Carousel responsive={responsive}>
-        {(getActivity(props.minTempCelsius, props.maxTempCelsius)).map(({ image, text }, index) => (
-        <React.Fragment key={index}>
-          <div className="card" key={index}>
-            <img width={200} height={150} className="product--image rounded-md" src={image} alt={text} />
-            <p className="title">{text}</p>
-          </div>
-          </React.Fragment>
-        ))}
-      </Carousel>}
-      </div>
-      </>
-
->>>>>>> Stashed changes
     );
 };
 
