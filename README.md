@@ -88,5 +88,7 @@ will have a red background color:
 
 Two prototypes of the app were designed in Figma: One for desktop and one for phone. 
 Links to view both of the protoypes:
+
 phone view: https://www.figma.com/file/f94F5moIIlDdNhN6XdNPKT/smart-systems-prototype?type=design&node-id=54724%3A28185&mode=design&t=uVW5cItmRGfgGWHU-1
+
 desktop view: https://www.figma.com/file/5hJUY5zKLOrxO0Fn8A1zNK/smart-systems-desktop?type=design&node-id=54696%3A25717&mode=design&t=fshj2W6760BkwTyV-1
