@@ -1,6 +1,24 @@
 // Reference: https://www.npmjs.com/package/react-multi-carousel
+import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { winterimages } from "../../assets/images/ActivitiesCarousel/winterimages.js";
+import { outdoorimages } from "../../assets/images/ActivitiesCarousel/outdoorimages.js";
+import { indoorimages } from "../../assets/images/ActivitiesCarousel/indoorimages.js";
+import "./index.css";
+import getWeather from "../../api/getWeather";
+import Location from "../../models/Location";
+import LocationSearchBar from "../../components/LocationSearchBar";
+type WeatherCard = {
+    weatherData?: any;
+};
+
+type CarouselCardProps = {
+    weather?: any;
+    location?: Location;
+    activitySet?: any;
+};
+
 
 const responsive = {
     superLargeDesktop: {
@@ -10,7 +28,7 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
+        items: 4,
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -22,17 +40,49 @@ const responsive = {
     },
 };
 
-type CarouselCardProps = {};
+
 
 const CarouselCard = (props: CarouselCardProps) => {
+    const currentTempKelvin: number = props.weather?.weather.main.temp;
+    const currentTempCelsius: number = currentTempKelvin - 273.15;
+
+    const minTempKelvin: number = props.weather?.weather.main.temp_min;
+    const minTempCelsius: number = minTempKelvin - 273.15;
+
+    const maxTempKelvin: number = props.weather?.weather.main.temp_max;
+    const maxTempCelsius: number = maxTempKelvin - 273.15;
+    console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius)
+    
+
     return (
-        <Carousel responsive={responsive}>
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
-        </Carousel>
+        <>
+        <div className="card-container rounded-md bg-white">
+        <h2 className="Activities"> Activities</h2>
+        {<Carousel responsive={responsive}>
+        {(getActivity(minTempCelsius, maxTempCelsius)).map(({ image, text }, index) => (
+        <React.Fragment key={index}>
+          <div className="card" key={index}>
+            <img width={200} height={150} className="product--image rounded-md" src={image} alt={text} />
+            <p className="title">{text}</p>
+          </div>
+          </React.Fragment>
+        ))}
+      </Carousel>}
+      </div>
+      </>
+
     );
 };
 
 export default CarouselCard;
+
+const getActivity = (minTempCelsius:number, maxTempCelsius:number) => {
+if (minTempCelsius>=-20 && maxTempCelsius<0) {
+    return winterimages;
+}
+else if (minTempCelsius>=5 && maxTempCelsius<=35) {
+    return outdoorimages;
+}
+else {
+    return indoorimages;
+} }

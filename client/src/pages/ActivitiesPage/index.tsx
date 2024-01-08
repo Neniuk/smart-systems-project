@@ -10,7 +10,7 @@ import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 
 import CarouselCard from "../../components/CarouselCard";
-
+import "./index.css";
 type ActivitiesPageProps = {
     weather?: object;
     forecast?: object;
@@ -19,7 +19,7 @@ type ActivitiesPageProps = {
 
 const ActivitiesPage = (props: ActivitiesPageProps) => {
     return (
-        <div>
+        <div className="activities-container">
             <div>
                 <CarouselCard />
             </div>
