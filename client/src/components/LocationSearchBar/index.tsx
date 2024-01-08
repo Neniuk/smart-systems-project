@@ -5,13 +5,13 @@ import "./LocationSearchBar.css";
 import Location from "../../models/Location";
 import getCity from "../../api/getCity";
 import getCoordinates from "../../api/getCoordinates";
+import { get } from "http";
 
 type LocationSearchBarProps = {
     location?: Location;
     setLocation: (location: Location) => void;
 };
 
-// TODO: Update searchbar to make it functional
 // TODO: Update page navigation styling and add hover effects
 const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
     location,
@@ -19,7 +19,14 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
 }) => {
     const [currentLocation, setCurrentLocation] = useState("");
     const [searchedLocation, setSearchedLocation] = useState("");
-    const [recentLocations, setRecentLocations] = useState<string[]>([]);
+    const [recentLocations, setRecentLocations] = useState<string[]>([
+        "Vantaa",
+        "Oulu",
+        "Lappeenranta",
+        "Hämeenlinna",
+        "Helsinki",
+        "Lahti",
+    ]);
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -37,18 +44,23 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
         setIsOpen(!isOpen);
     };
 
-    {
-        /* tried to keep track of the recently searched cities by keeping them in an array and just pushing new searches in but 
-  i can not really figure out how to write it properly without errors */
-    }
-
     const SearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchedLocation(event.target.value);
     };
 
     const SearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setCurrentLocation(searchedLocation);
+        const tmp = searchedLocation;
+        setSearchedLocation("");
+
+        getCoordinates(tmp).then((data) => {
+            if (data) {
+                setCurrentLocation(tmp);
+                setRecentLocations([...recentLocations, tmp]);
+
+                setLocation(data);
+            }
+        });
     };
 
     const handleLocationChange = (city: string) => {
@@ -91,7 +103,7 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
                     </span>
                 </div>
 
-                <div className="search-section">
+                <div className="search-section text-textDark">
                     <form onSubmit={SearchSubmit}>
                         <input
                             type="text"
@@ -106,36 +118,15 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
                     <span className="recent-locations-text">
                         Recently searched:
                     </span>
-                    <div
-                        className="location"
-                        onClick={() => handleLocationChange("Vantaa")}
-                    >
-                        Vantaa
-                    </div>
-                    <div
-                        className="location"
-                        onClick={() => handleLocationChange("Oulu")}
-                    >
-                        Oulu
-                    </div>
-                    <div
-                        className="location"
-                        onClick={() => handleLocationChange("Lappeenranta")}
-                    >
-                        Lappeenranta
-                    </div>
-                    <div
-                        className="location"
-                        onClick={() => handleLocationChange("Hämeenlinna")}
-                    >
-                        Hämeenlinna
-                    </div>
-                    <div
-                        className="location"
-                        onClick={() => handleLocationChange("Helsinki")}
-                    >
-                        Helsinki
-                    </div>
+                    {recentLocations.map((location, index) => (
+                        <div
+                            className="location cursor-pointer"
+                            key={index}
+                            onClick={() => handleLocationChange(location)}
+                        >
+                            {location}
+                        </div>
+                    ))}
                 </div>
                 <div
                     className="menu-options"

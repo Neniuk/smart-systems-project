@@ -1,96 +1,94 @@
 /* LocationSearchBar.css */
 .menu-container {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 350;
-  font-size: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 250px; /* Width of the menu */
-  z-index: 1000;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: 350;
+    font-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Width of the menu */
+    z-index: 1000;
 }
 
 .hamburger-icon {
-  position: fixed;
-  top: 30px;
-  left: 10px;
-  width: 30px;
-  height: 20px;
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    width: 30px;
+    height: 20px;
 
-  cursor: pointer;
-  z-index: 1100;
-  transition:  0.8s ease;
-
-
+    cursor: pointer;
+    z-index: 1100;
+    transition: 0.8s ease;
 }
 
 .hamburger-icon::before {
-  content: '';
-  position: absolute;
-  top: 70%;
-  left: 57.5%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 57.5%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
 }
 
-.bar1, .bar2, .bar3 {
-  width: 25px;
-  height: 2.25px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-
-
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 2.25px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
 .hamburger-closed .bar1 {
-  position: absolute;
-  left: -4px;
-  bottom: 5px;
-  margin: 6px 8px;
-
+    position: absolute;
+    left: -4px;
+    bottom: 5px;
+    margin: 6px 8px;
 }
 
 .hamburger-closed .bar2 {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  margin: 6px 4px;
-
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    margin: 6px 4px;
 }
 
 .hamburger-closed .bar3 {
-  position: absolute;
-  left: 4px;
-  bottom: -5px;
-  margin: 6px 0px;
-
+    position: absolute;
+    left: 4px;
+    bottom: -5px;
+    margin: 6px 0px;
 }
 
 /* Rotate first bar */
 .hamburger-open .bar1 {
-  transform: translate(4px, 7px) rotate(-45deg);
+    transform: translate(4px, 7px) rotate(-45deg);
 }
 
 /* Fade out the second bar */
-.hamburger-open .bar2 {opacity: 0;}
+.hamburger-open .bar2 {
+    opacity: 0;
+}
 
 /* Rotate last bar */
 .hamburger-open .bar3 {
-  transform: translate(4px, -10px) rotate(45deg);
+    transform: translate(4px, -10px) rotate(45deg);
 }
 
 .hamburger-open {
-  transform: translateX(1000%);
+    transform: translateX(1000%);
 }
 
 .hamburger-closed {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 /*.bar {
@@ -101,308 +99,120 @@
 }
 */
 .title-container {
-  text-align: center;
-  margin: 20px 0;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .weather-planner-title {
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
-
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
 }
 
-
 .arrow-icon {
-  display: inline-block;
-  margin-right: 10px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .menu-content {
-  background-color: rgba(146, 212, 254, 0.912);
-  width: 300px;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: transform 0.8s ease;
-  transform: translateX(-100%);
+    background-color: rgba(146, 212, 254, 0.912);
+    width: 300px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.8s ease;
+    transform: translateX(-100%);
 }
 
 .menu-open {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .menu-closed {
-  transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 .search-section {
-  position:relative;
-  border-width: 2px;
-  border-color: rgb(54, 171, 255);
-  background-color: rgb(173, 224, 243);
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  margin-right: 0px;
-  left: 0px;
+    position: relative;
+    border-width: 2px;
+    border-color: rgb(54, 171, 255);
+    background-color: rgb(173, 224, 243);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-right: 0px;
+    left: 0px;
 }
 
 .search-section input {
-  position: relative;
-  right: -10px;
-  background-color: rgb(173, 224, 243);
-  text-align: center;
-  border: none;
-  outline: none;
-  width: 85%;
-  color: white;
+    position: relative;
+    right: -10px;
+    background-color: rgb(173, 224, 243);
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 85%;
+    color: black;
 }
 
 .search-section input::placeholder {
-  color: rgb(255, 255, 255);
+    color: black;
 }
 
 .search-section input:focus::placeholder {
-  color: transparent;
+    color: transparent;
 }
 
-
-.current-location, .recent-locations, .location {
-  padding: 10px 0;
+.current-location,
+.recent-locations,
+.location {
+    padding: 10px 0;
 }
 
 .current-location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  color: black;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
 }
 
-.current-location-text, .current-location-city {
-  margin-right: 5px;
-  text-align: center;
-  color: #0c78b3;
-  font-size: 130%;
-  font-weight: light bold;
-  text-align: center;
+.current-location-text,
+.current-location-city {
+    margin-right: 5px;
+    text-align: center;
+    color: #0c78b3;
+    font-size: 130%;
+    font-weight: light bold;
+    text-align: center;
 }
-
-
 
 .recent-locations {
-  border-top: 1.5px dotted #3773ff;
-  border-bottom: 1.5px dotted #3773ff;
-  width: 100%;
-  color: black;
+    border-top: 1.5px dotted #3773ff;
+    border-bottom: 1.5px dotted #3773ff;
+    width: 100%;
+    color: black;
 }
 
 .recent-locations-text {
-  font-size: 130%;
-  color: #0c78b3;
-  font-weight: light bold;
+    font-size: 130%;
+    color: #0c78b3;
+    font-weight: light bold;
 }
 
-
-
-
 .location:hover {
-  font-weight: 700;
-  color:rgb(22,0,156);
-  /*background-color: white;
+    font-weight: 700;
+    color: rgb(22, 0, 156);
+    /*background-color: white;
   border-radius: 10px;
   transform: scale(1.15);
   text-align: center;*/
 }
 
-
 .menu-options {
-  font-weight: bold;
-  display: block;
-  margin: 10px 0;
-  text-transform: uppercase;
-  color: black;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+    text-transform: uppercase;
+    color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

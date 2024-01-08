@@ -22,14 +22,14 @@ const PromptActivitiesCard = (props: PromptActivitiesCardProps) => {
     }, [props.location, props.weather]);
 
     const handleGetSuggestedActivities = () => {
-        console.log("Onlick called");
+        // console.log("OnClick called");
         if (props.location && props.weather) {
             getCity(props.location).then((city) => {
-                console.log("PromptActivitiesCard", city);
+                // console.log("PromptActivitiesCard - City: ", city);
                 if (city) {
                     getActivities(city, props.weather).then((data) => {
                         if (data) {
-                            console.log("Suggested activities: ", data);
+                            console.log("Suggested activities: \n", data);
 
                             let lines = data.split("\n");
 
@@ -52,12 +52,13 @@ const PromptActivitiesCard = (props: PromptActivitiesCardProps) => {
     };
 
     return (
-        <div
-            className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% from-mainCardPrimary via-mainCardPrimary to-mainCardSecondary relative flex cursor-pointer flex-col justify-center gap-4 overflow-hidden rounded-2xl bg-gradient-to-l p-4"
-            onClick={dataAvailable ? handleGetSuggestedActivities : undefined}
-        >
-            <div className="absolute inset-0 bg-black opacity-5"></div>
-            <div className="text-textAccent z-10 m-auto text-center text-xl font-bold">
+        <div className="min-w-95% sm:min-w-128 sm:max-w-128 max-w-95% shadow-outer text-textDark from-secondaryCardPrimary to-secondaryCardSecondary relative flex flex-col justify-center gap-4 overflow-hidden rounded-2xl border-2 border-blue-400 bg-gradient-to-l p-4">
+            <div
+                className="z-10 m-auto cursor-pointer text-center text-xl font-bold text-blue-500"
+                onClick={
+                    dataAvailable ? handleGetSuggestedActivities : undefined
+                }
+            >
                 Get Suggested Activities
             </div>
             <div className="z-10">{suggestedActivities}</div>
