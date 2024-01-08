@@ -3,3 +3,6 @@
     margin: 0 auto; /* Center the container horizontally */
     padding-bottom:10vh;
   }
+  .carousel {
+    padding:5vh;
+  }

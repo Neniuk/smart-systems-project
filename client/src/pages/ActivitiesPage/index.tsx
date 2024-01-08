@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import WeatherCard from "../../components/WeatherCard";
-import ExploreCard from "../../components/ExploreCard";
-import ForecastCard from "../../components/ForecastCard";
-import LocationSearchBar from "../../components/LocationSearchBar"; // Make sure the import matches the renamed file
 import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
 import BackgroundImage from "../../components/BackgroundImage";
 
 import CarouselCard from "../../components/CarouselCard";
+import PlaceCarouselCard from "../../components/CarouselCard/PlaceCarouselCard";
 import "./index.css";
 
 type ActivitiesPageProps = {
@@ -29,11 +26,21 @@ const ActivitiesPage = (props: ActivitiesPageProps) => {
     const maxTempCelsius: number = maxTempKelvin - 273.15;
     console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius)
     return (
-        <div className="activities-container">
-            <div>
+        <div className="activities-container mt-5">
+            <div className="carousel mt-5">
                 <CarouselCard 
                 maxTempCelsius={maxTempCelsius}
                 minTempCelsius={minTempCelsius}/>
+            </div>
+            <div className="carousel mt-5">
+                <PlaceCarouselCard
+                item="Restaurants"
+                />
+            </div>
+            <div className="carousel mt-5">
+                <PlaceCarouselCard
+                item="Hotels"
+                />
             </div>
         </div>
     );

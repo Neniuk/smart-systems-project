@@ -1,4 +1,4 @@
-import React from "react";
+
 import activity1 from "./badminton.jpg";
 import activity2 from "./basketball.jpg";
 import activity3 from "./tennis-indoors.jpg";

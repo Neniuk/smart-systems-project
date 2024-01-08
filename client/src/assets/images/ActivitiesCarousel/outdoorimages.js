@@ -1,11 +1,11 @@
-import React from "react";
+
 import activity1 from "./football.jpg";
 import activity2 from "./golfing.jpg";
 import activity3 from "./tennis.jpg";
 import activity4 from "./running.jpg";
 import activity5 from "./swimming-outdoor.jpg";
 import activity6 from "./hiking.jpg";
-import activity7 from "./basketball.jpg";
+import activity7 from "./basketball-outdoors.jpg";
 import activity8 from "./cycling.jpg";
 export const outdoorimages = [
 
