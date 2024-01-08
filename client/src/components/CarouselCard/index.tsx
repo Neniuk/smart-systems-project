@@ -10,10 +10,9 @@ import getWeather from "../../api/getWeather";
 import Location from "../../models/Location";
 import LocationSearchBar from "../../components/LocationSearchBar";
 
-
 type CarouselCardProps = {
-  minTempCelsius: number;
-  maxTempCelsius: number;
+    minTempCelsius: number;
+    maxTempCelsius: number;
 };
 
 const responsive = {
@@ -37,65 +36,33 @@ const responsive = {
 };
 
 const CarouselCard = (props: CarouselCardProps) => {
-<<<<<<< Updated upstream
-    console.log("CAROUSEL PROPS:", props.weather);
-    const currentTempKelvin: number = props.weather?.weather.main.temp;
-    const currentTempCelsius: number = currentTempKelvin - 273.15;
-
-    const minTempKelvin: number = props.weather?.weather.main.temp_min;
-    const minTempCelsius: number = minTempKelvin - 273.15;
-
-    const maxTempKelvin: number = props.weather?.weather.main.temp_max;
-    const maxTempCelsius: number = maxTempKelvin - 273.15;
-    console.log("MIN/MAX TEMPERATURES:", minTempCelsius, maxTempCelsius);
-
     return (
         <>
             <div className="card-container rounded-md bg-white">
                 <h2 className="Activities"> Activities</h2>
                 {
                     <Carousel responsive={responsive}>
-                        {getActivity(minTempCelsius, maxTempCelsius).map(
-                            ({ image, text }, index) => (
-                                <React.Fragment key={index}>
-                                    <div className="card" key={index}>
-                                        <img
-                                            width={200}
-                                            height={150}
-                                            className="product--image rounded-md"
-                                            src={image}
-                                            alt={text}
-                                        />
-                                        <p className="title">{text}</p>
-                                    </div>
-                                </React.Fragment>
-                            )
-                        )}
+                        {getActivity(
+                            props.minTempCelsius,
+                            props.maxTempCelsius
+                        ).map(({ image, text }, index) => (
+                            <React.Fragment key={index}>
+                                <div className="card" key={index}>
+                                    <img
+                                        width={200}
+                                        height={150}
+                                        className="product--image rounded-md"
+                                        src={image}
+                                        alt={text}
+                                    />
+                                    <p className="title">{text}</p>
+                                </div>
+                            </React.Fragment>
+                        ))}
                     </Carousel>
                 }
             </div>
         </>
-=======
-
-
-    return (
-        <>
-        <div className="card-container rounded-md bg-white">
-        <h2 className="Activities"> Activities</h2>
-        {<Carousel responsive={responsive}>
-        {(getActivity(props.minTempCelsius, props.maxTempCelsius)).map(({ image, text }, index) => (
-        <React.Fragment key={index}>
-          <div className="card" key={index}>
-            <img width={200} height={150} className="product--image rounded-md" src={image} alt={text} />
-            <p className="title">{text}</p>
-          </div>
-          </React.Fragment>
-        ))}
-      </Carousel>}
-      </div>
-      </>
-
->>>>>>> Stashed changes
     );
 };
 
