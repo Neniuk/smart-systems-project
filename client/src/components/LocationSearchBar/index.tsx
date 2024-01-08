@@ -135,7 +135,6 @@ const LocationSearchBar: React.FC<LocationSearchBarProps> = ({
                     <Link to="/">Home</Link>
                     <Link to="/activities">Activities</Link>
                     <Link to="/clothes">Clothes</Link>
-                    <Link to="/settings">Settings</Link>
                 </div>
             </div>
         </div>
