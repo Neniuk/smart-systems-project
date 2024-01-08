@@ -4,6 +4,7 @@ import path from "path";
 
 import weatherRouter from "./routes/weather";
 import geocodingRouter from "./routes/geocoding";
+import activitiesRouter from "./routes/activities";
 
 const app: Express = express();
 const PORT: string = process.env.PORT || "5000";
@@ -19,6 +20,8 @@ app.use("/weather/forecasts/weekly", weatherRouter);
 
 app.use("/geocoding", geocodingRouter);
 app.use("/geocoding/reverse", geocodingRouter);
+
+app.use("/activities", activitiesRouter);
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
